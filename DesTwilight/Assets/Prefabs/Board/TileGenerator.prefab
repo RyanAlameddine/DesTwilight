@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1836050103438714515
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6391692340144633793}
+  m_Layer: 0
+  m_Name: TileOrigin
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6391692340144633793
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1836050103438714515}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.598076, y: 0.1, z: -1.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2519073166290422498}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8761402492234656122
 GameObject:
   m_ObjectHideFlags: 0
@@ -9,6 +39,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2519073166290422498}
+  - component: {fileID: 1436883849098972}
+  - component: {fileID: 8968634347133613496}
+  - component: {fileID: 800674308068951949}
+  - component: {fileID: 4025203604648161203}
+  - component: {fileID: 7161232163279378495}
   m_Layer: 0
   m_Name: TileGenerator
   m_TagString: Untagged
@@ -25,8 +60,84 @@ Transform:
   m_GameObject: {fileID: 8761402492234656122}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.632902, y: 6.100253, z: 11.22605}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_Children:
+  - {fileID: 6391692340144633793}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1436883849098972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8761402492234656122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d328e5356a5a5cc47b2757b83f1ec8b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zeroZeroTransform: {fileID: 6391692340144633793}
+  tileMagnetPrefab: {fileID: 6844414865014304995, guid: 28fbcea055af77648bf0885e2b0a7b4b,
+    type: 3}
+--- !u!114 &8968634347133613496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8761402492234656122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e3b9e8e0333a2f478959fd21a248bad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 3527600423526905062, guid: 71ac75d0a40ecbf4e9e7cae81bd512fd, type: 3}
+  texturesPath: Data/Planets/Planets
+  spawnTransform: {fileID: 0}
+--- !u!114 &800674308068951949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8761402492234656122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e3b9e8e0333a2f478959fd21a248bad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 3527600423526905062, guid: 71ac75d0a40ecbf4e9e7cae81bd512fd, type: 3}
+  texturesPath: Data/Planets/homes
+  spawnTransform: {fileID: 0}
+--- !u!114 &4025203604648161203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8761402492234656122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e3b9e8e0333a2f478959fd21a248bad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 3527600423526905062, guid: 71ac75d0a40ecbf4e9e7cae81bd512fd, type: 3}
+  texturesPath: Data/Planets/Hazards
+  spawnTransform: {fileID: 0}
+--- !u!114 &7161232163279378495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8761402492234656122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e3b9e8e0333a2f478959fd21a248bad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 8761402492234656122}
+  texturesPath: Data/RaceSheets
+  spawnTransform: {fileID: 0}

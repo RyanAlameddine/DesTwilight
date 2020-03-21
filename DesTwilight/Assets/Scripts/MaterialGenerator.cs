@@ -8,9 +8,15 @@ using UnityEngine;
 [RequireComponent(typeof(MeshRenderer))]
 public class MaterialGenerator : MonoBehaviour
 {
+    [SerializeField]
+    MeshRenderer meshRenderer;
+
     public Material CreateMaterial(string shader = "Standard")
     {
-        MeshRenderer meshRenderer = GetComponent<MeshRenderer>();
+        if (!meshRenderer)
+        {
+            meshRenderer = GetComponent<MeshRenderer>();
+        }
         Material material = new Material(Shader.Find(shader));
         StandardShaderUtils.ChangeRenderMode(material, StandardShaderUtils.BlendMode.Cutout);
 

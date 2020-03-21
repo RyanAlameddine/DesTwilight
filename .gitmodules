@@ -1,3 +1,6 @@
 [submodule "DesTwilight\\Assets\\Data"]
 	path = DesTwilight\\Assets\\Data
 	url = https://github.com/RyanAlameddine/DesTwilightData.git
+[submodule "DesTwilight/Assets/Data"]
+	path = DesTwilight/Assets/Data
+	url = https://github.com/RyanAlameddine/DesTwilightData.git

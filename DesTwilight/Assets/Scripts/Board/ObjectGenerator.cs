@@ -14,19 +14,28 @@ public class ObjectGenerator : MonoBehaviour
     [SerializeField]
     string texturesPath;
 
+    [SerializeField]
+    Transform spawnTransform;
+
     void Start()
     {
-        if (!prefab.GetComponent<MaterialGenerator>()) throw new System.Exception("Prefabs must have Material Generator");
+        if (prefab.GetComponents<MaterialGenerator>().Length==0) throw new System.Exception("Prefabs must have Material Generator");
 
         Texture2D[] textures = FileFunctions.GetAtPath<Texture2D>(texturesPath);
-        foreach(Texture2D texture in textures)
+        int y = 0;
+        for(int i = 0; i < textures.Length;)
         {
-            GameObject instance = Instantiate(prefab);
-            Material material = instance.GetComponent<MaterialGenerator>().CreateMaterial();
-            material.mainTexture = texture;
+            GameObject instance = Instantiate(prefab, spawnTransform.position + new Vector3(0, y, 0), Quaternion.identity);
+            y += 1;
+
+            foreach(var generator in instance.GetComponents<MaterialGenerator>())
+            {
+                Texture2D texture = textures[i];
+                Material material = generator.CreateMaterial();
+                material.mainTexture = texture;
+                i++;
+            }
+
         }
     }
-
-    
-
 }
