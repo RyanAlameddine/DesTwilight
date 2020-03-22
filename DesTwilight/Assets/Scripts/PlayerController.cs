@@ -25,6 +25,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     Vector2 rotationRange = new Vector2(3, 89);
 
+    [SerializeField]
+    GameObject activateSuggestion;
+
     bool rotating = false;
 
     void Start()
@@ -83,7 +86,11 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            if (objInHand != null) objInHand.Release();
+            if (objInHand != null)
+            {
+                activateSuggestion.SetActive(false);
+                objInHand.Release();
+            }
             objInHand = hit.collider.GetComponent<BoardGameObject>();
             if (objInHand)
             {
@@ -93,6 +100,10 @@ public class PlayerController : MonoBehaviour
                     return;
                 }
                 objInHand.Hold();
+                if(objInHand.Activator != null)
+                {
+                    activateSuggestion.SetActive(true);
+                }
             }
         }else if (Input.GetMouseButton(0))
         {
@@ -105,6 +116,7 @@ public class PlayerController : MonoBehaviour
             if (objInHand)
             {
                 objInHand.Release();
+                activateSuggestion.SetActive(false);
                 objInHand = null;
             }
         }

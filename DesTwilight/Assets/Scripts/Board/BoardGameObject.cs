@@ -13,12 +13,28 @@ public class BoardGameObject : MonoBehaviour
 
     bool flipped = false;
 
+    [SerializeField]
+    public bool IgnoreSnapping = true;
+
     Quaternion targetRotation = Quaternion.identity;
+
+    public Activator Activator;
 
     public void Start()
     {
         Collider = GetComponent<Collider>();
         rigidbody = GetComponent<Rigidbody>();
+    }
+
+    public void Update()
+    {
+        if (holding)
+        {
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                flipped = !flipped;
+            }
+        }
     }
 
     public void FixedUpdate()
@@ -36,11 +52,6 @@ public class BoardGameObject : MonoBehaviour
                 yRot -= PlayerController.HandRotationSensitivity;
             }
 
-            if (Input.GetKeyDown(KeyCode.F))
-            {
-                flipped = !flipped;
-            }
-
             if (flipped)
             {
                 targetRotation = Quaternion.Euler(0, 0, 180);
@@ -50,7 +61,8 @@ public class BoardGameObject : MonoBehaviour
                 targetRotation = Quaternion.identity;
             }
 
-            Quaternion rotation = Quaternion.Lerp(transform.localRotation, targetRotation, .2f);
+            Quaternion localRotation = Quaternion.Euler(transform.localRotation.eulerAngles.x, 0, transform.localRotation.eulerAngles.z);
+            Quaternion rotation = Quaternion.Lerp(localRotation, targetRotation, .2f);
             rotation.eulerAngles = new Vector3(rotation.eulerAngles.x, transform.localRotation.eulerAngles.y + yRot, rotation.eulerAngles.z);
             transform.localRotation = rotation;
         }
