@@ -106,7 +106,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 25
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -144,7 +144,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9c1c70a306a3a64ebce181e3e16c143, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensitivityX: 1
-  sensitivityY: 1
+  sensitivityX: 3
+  sensitivityY: 3
   movementSensitivity: 400
   cursor: {fileID: 0}
+  rotationRange: {x: 3, y: 89}
+  activateSuggestion: {fileID: 0}

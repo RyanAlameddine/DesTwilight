@@ -34,6 +34,18 @@ public class BoardGameObject : MonoBehaviour
             {
                 flipped = !flipped;
             }
+            if (Input.GetKeyDown(KeyCode.C))
+            {
+                if (Activator)
+                {
+                    Activator.Activate(this);
+                    if (!Activator)
+                    {
+                        GameObject gameObject = GameObject.Find("ActivateSuggestion");
+                        gameObject.SetActive(false);
+                    }
+                }
+            }
         }
     }
 

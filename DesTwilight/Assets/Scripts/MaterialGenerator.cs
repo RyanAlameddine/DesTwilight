@@ -5,7 +5,6 @@ using UnityEngine;
 /// <summary>
 /// Creates a material and loads into meshRenderer
 /// </summary>
-[RequireComponent(typeof(MeshRenderer))]
 public class MaterialGenerator : MonoBehaviour
 {
     [SerializeField]
