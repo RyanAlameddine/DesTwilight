@@ -50,6 +50,7 @@ public class ObjectGenerator : MonoBehaviour
                     texture = textures[i];
                     i++;
                 }
+                alternation = !alternation;
                 Material material = generator.CreateMaterial();
                 material.mainTexture = texture;
             }

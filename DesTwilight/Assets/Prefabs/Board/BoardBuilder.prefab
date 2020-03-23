@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &300597966
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 300597967}
+  m_Layer: 0
+  m_Name: ActionSpawn (Action)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &300597967
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 300597966}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.62, y: 0, z: -2.67}
+  m_LocalScale: {x: 9.6, y: 0.2, z: 9.6}
+  m_Children: []
+  m_Father: {fileID: 2519073166290422498}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &762714710
 GameObject:
   m_ObjectHideFlags: 0
@@ -125,6 +155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IgnoreSnapping: 1
   Activator: {fileID: 0}
+  carryingHeightOffset: 0
 --- !u!1 &1182966481
 GameObject:
   m_ObjectHideFlags: 0
@@ -393,7 +424,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3315371080139344932}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.8, y: 0, z: -2.42}
+  m_LocalPosition: {x: -2.92, y: 2, z: 3.41}
   m_LocalScale: {x: 9.6, y: 0.2, z: 9.6}
   m_Children: []
   m_Father: {fileID: 2519073166290422498}
@@ -453,7 +484,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5168405873068165637}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.22, y: 0, z: 2.92}
+  m_LocalPosition: {x: -2.71, y: 2, z: -0.47}
   m_LocalScale: {x: 9.6, y: 0.2, z: 9.6}
   m_Children: []
   m_Father: {fileID: 2519073166290422498}
@@ -483,7 +514,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8494976213100563617}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.7, y: 0, z: 4.56}
+  m_LocalPosition: {x: 3.58, y: 0, z: 4.26}
   m_LocalScale: {x: 9.6, y: 0.2, z: 9.6}
   m_Children: []
   m_Father: {fileID: 2519073166290422498}
@@ -505,6 +536,7 @@ GameObject:
   - component: {fileID: 7161232163279378495}
   - component: {fileID: 4274110741806475103}
   - component: {fileID: 6995739959247036509}
+  - component: {fileID: 1649182955}
   m_Layer: 0
   m_Name: BoardBuilder
   m_TagString: Untagged
@@ -536,6 +568,7 @@ Transform:
   - {fileID: 1182966482}
   - {fileID: 1288740772}
   - {fileID: 1755540506}
+  - {fileID: 300597967}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -569,6 +602,7 @@ MonoBehaviour:
   prefab: {fileID: 3527600423526905062, guid: 71ac75d0a40ecbf4e9e7cae81bd512fd, type: 3}
   texturesPath: Data/Planets/Planets
   spawnTransform: {fileID: 1732726724059002776}
+  alternator: {fileID: 0}
 --- !u!114 &800674308068951949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -584,6 +618,7 @@ MonoBehaviour:
   prefab: {fileID: 3527600423526905062, guid: 71ac75d0a40ecbf4e9e7cae81bd512fd, type: 3}
   texturesPath: Data/Planets/homes
   spawnTransform: {fileID: 7112355484967101016}
+  alternator: {fileID: 0}
 --- !u!114 &4025203604648161203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -599,6 +634,7 @@ MonoBehaviour:
   prefab: {fileID: 3527600423526905062, guid: 71ac75d0a40ecbf4e9e7cae81bd512fd, type: 3}
   texturesPath: Data/Planets/Hazards
   spawnTransform: {fileID: 1320788651985044343}
+  alternator: {fileID: 0}
 --- !u!114 &7161232163279378495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -614,6 +650,7 @@ MonoBehaviour:
   prefab: {fileID: 5959117824501847599, guid: cf7e0e0e5316e41439c45e5dd675a983, type: 3}
   texturesPath: Data/RaceSheets
   spawnTransform: {fileID: 4267162228543248731}
+  alternator: {fileID: 0}
 --- !u!114 &4274110741806475103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -629,6 +666,7 @@ MonoBehaviour:
   prefab: {fileID: 8421599477220661736, guid: e1ca9595bfa73364d9bd728e5d7cfb46, type: 3}
   texturesPath: Data/Command
   spawnTransform: {fileID: 8239244046335819836}
+  alternator: {fileID: 0}
 --- !u!114 &6995739959247036509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -644,6 +682,23 @@ MonoBehaviour:
   prefab: {fileID: 5630076168262814711, guid: ff023525affbe794da49c5a823d777dd, type: 3}
   texturesPath: Data/strategyCards
   spawnTransform: {fileID: 6561536264479270689}
+  alternator: {fileID: 0}
+--- !u!114 &1649182955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8761402492234656122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e3b9e8e0333a2f478959fd21a248bad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 4519415092760932101, guid: 6a19abacec0e86643aa35b5a4a9836c6, type: 3}
+  texturesPath: Data/cards/Action Cards
+  spawnTransform: {fileID: 300597967}
+  alternator: {fileID: 2800000, guid: 6b185ee96ac1ca14da77a53598b6a604, type: 3}
 --- !u!1 &8995246529131653833
 GameObject:
   m_ObjectHideFlags: 0

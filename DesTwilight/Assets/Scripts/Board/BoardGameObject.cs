@@ -8,10 +8,10 @@ public class BoardGameObject : MonoBehaviour
     public Collider Collider { get; private set; }
     public bool Locked { get; set; }
 
-    new Rigidbody rigidbody;
-    public bool holding { get; private set; } = false;
+    protected new Rigidbody rigidbody;
+    public bool holding { get; protected set; } = false;
 
-    bool flipped = false;
+    protected bool flipped = false;
 
     [SerializeField]
     public bool IgnoreSnapping = true;
@@ -19,6 +19,8 @@ public class BoardGameObject : MonoBehaviour
     Quaternion targetRotation = Quaternion.identity;
 
     public Activator Activator;
+
+    public float carryingHeightOffset = 0;
 
     public void Start()
     {
@@ -80,7 +82,7 @@ public class BoardGameObject : MonoBehaviour
         }
     }
 
-    public void Hold()
+    public virtual void Hold()
     {
         holding = true;
         Collider.enabled = false;
@@ -88,7 +90,7 @@ public class BoardGameObject : MonoBehaviour
         rigidbody.isKinematic = true;
     }
 
-    public void Release()
+    public virtual void Release()
     {
         holding = false;
         Collider.enabled = true;

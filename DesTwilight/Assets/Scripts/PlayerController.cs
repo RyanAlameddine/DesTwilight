@@ -28,6 +28,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     GameObject activateSuggestion;
 
+    [SerializeField]
+    GameObject dealSuggestion;
+
     bool rotating = false;
 
     void Start()
@@ -73,7 +76,6 @@ public class PlayerController : MonoBehaviour
     }
 
     BoardGameObject objInHand;
-    List<BoardGameObject> selections;
     void Hit(RaycastHit hit, Ray ray)
     {
         if (!hit.collider) 
@@ -83,6 +85,25 @@ public class PlayerController : MonoBehaviour
         }
         
         cursor.transform.position = hit.point;
+        var game = hit.collider.GetComponent<BoardGameObject>();
+
+        if (objInHand == null)
+        {
+            if (game && Input.GetKeyDown(KeyCode.L))
+            {
+                game.Locked = !game.Locked;
+                return;
+            }
+            if(game is Card)
+            {
+                dealSuggestion.SetActive(true);
+            }
+            else
+            {
+                dealSuggestion.SetActive(false);
+            }
+        }
+        
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -91,7 +112,7 @@ public class PlayerController : MonoBehaviour
                 activateSuggestion.SetActive(false);
                 objInHand.Release();
             }
-            objInHand = hit.collider.GetComponent<BoardGameObject>();
+            objInHand = game;
             if (objInHand)
             {
                 if (objInHand.Locked)
@@ -99,7 +120,21 @@ public class PlayerController : MonoBehaviour
                     objInHand = null;
                     return;
                 }
-                objInHand.Hold();
+                //pickup card from deck
+                if (game is Card card && (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)))
+                {
+                    objInHand = card.Deal().GetComponent<Card>();
+                    objInHand.enabled = true;
+                    objInHand.gameObject.SetActive(true);
+                    objInHand.Hold();
+                    objInHand.transform.position = hit.point + new Vector3(0, .4f + objInHand.carryingHeightOffset, 0);
+                    
+                }
+                //pickup non-card
+                else
+                {
+                    objInHand.Hold();
+                }
                 if(objInHand.Activator != null)
                 {
                     activateSuggestion.SetActive(true);
@@ -109,7 +144,7 @@ public class PlayerController : MonoBehaviour
         {
             if (objInHand)
             {
-                objInHand.transform.position = hit.point + new Vector3(0, .4f, 0);
+                objInHand.transform.position = hit.point + new Vector3(0, .4f + objInHand.carryingHeightOffset, 0);
             }
         }else if (Input.GetMouseButtonUp(0))
         {
