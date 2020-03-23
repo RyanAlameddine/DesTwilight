@@ -6,7 +6,7 @@ using UnityEngine;
 public class BoardGameObject : MonoBehaviour
 {
     public Collider Collider { get; private set; }
-    public bool Locked { get; set; }
+    public bool Locked;
 
     protected new Rigidbody rigidbody;
     public bool holding { get; protected set; } = false;

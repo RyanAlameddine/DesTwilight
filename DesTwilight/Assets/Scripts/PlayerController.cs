@@ -2,16 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Camera))]
+[RequireComponent(typeof(Camera), typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour
 {
     Rigidbody rigidBody;
+    [SerializeField]
     new Camera camera;
-
-    [SerializeField]
-    float sensitivityX = 1F;
-    [SerializeField]
-    float sensitivityY = 1F;
     [SerializeField]
     float movementSensitivity = 1000f;
     
@@ -21,57 +17,74 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     GameObject cursor;
 
-
-    [SerializeField]
-    Vector2 rotationRange = new Vector2(3, 89);
-
     [SerializeField]
     GameObject activateSuggestion;
 
     [SerializeField]
     GameObject dealSuggestion;
 
-    bool rotating = false;
+    //bool rotating = false;
+    [SerializeField]
+    SmoothMouseLook look;
 
     void Start()
     {
-        rigidBody = transform.parent.GetComponent<Rigidbody>();
-        camera = GetComponent<Camera>();
+        rigidBody = transform.GetComponent<Rigidbody>();
         //Cursor.lockState = CursorLockMode.Confined;
-        transform.LookAt(transform.parent);
+        //transform.LookAt(transform.parent);
     }
 
     void Update()
     {
         //Rotation
-        if (Input.GetMouseButtonDown(1)) { rotating = true; }
-        if (Input.GetMouseButtonUp(1)) { rotating = false; }
-        if (rotating)
+        //if (Input.GetMouseButtonDown(1)) { rotating = true; }
+        //if (Input.GetMouseButtonUp(1)) { rotating = false; }
+        //if (rotating)
+        //{
+        //    transform.RotateAround(transform.parent.position, Vector3.up, Input.GetAxis("Mouse X") * sensitivityX);
+
+        //    float rotateDegrees = -Input.GetAxis("Mouse Y") * sensitivityY;
+        //    //float angleBetween = Vector3.Angle(initialVector, currentVector) * (Vector3.Cross(initialVector, currentVector).x > 0 ? 1 : -1);
+        //    float angleBetween = transform.eulerAngles.x;
+        //    float newAngle = Mathf.Clamp(angleBetween + rotateDegrees, rotationRange.x, rotationRange.y);
+        //    rotateDegrees = newAngle - angleBetween;
+
+        //    transform.RotateAround(transform.parent.position, transform.right, rotateDegrees);
+
+
+        //    //transform.RotateAround(transform.parent.position, transform.right, -Input.GetAxis("Mouse Y") * sensitivityY);
+        //}
+
+        if (Input.GetMouseButtonDown(1))
         {
-            transform.RotateAround(transform.parent.position, Vector3.up, Input.GetAxis("Mouse X") * sensitivityX);
+            look.enabled = true;
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.Locked;
 
-            float rotateDegrees = -Input.GetAxis("Mouse Y") * sensitivityY;
-            //float angleBetween = Vector3.Angle(initialVector, currentVector) * (Vector3.Cross(initialVector, currentVector).x > 0 ? 1 : -1);
-            float angleBetween = transform.eulerAngles.x;
-            float newAngle = Mathf.Clamp(angleBetween + rotateDegrees, rotationRange.x, rotationRange.y);
-            rotateDegrees = newAngle - angleBetween;
-
-            transform.RotateAround(transform.parent.position, transform.right, rotateDegrees);
-
-
-            //transform.RotateAround(transform.parent.position, transform.right, -Input.GetAxis("Mouse Y") * sensitivityY);
         }
-        
-        
+        if (Input.GetMouseButtonUp(1))
+        {
+            look.enabled = false;
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+        }
+
         //Cursor
         Ray ray = camera.ScreenPointToRay(Input.mousePosition);
         Physics.Raycast(ray, out RaycastHit hit, 1000);
-        Hit(hit, ray);
-        
 
-        if(Mathf.Abs(Input.mouseScrollDelta.y) > 0)
+        //if (rotating)
+        //{
+        //    transform.LookAt(hit.point, Vector3.up);
+        //}
+
+        Hit(hit, ray);
+
+
+        if (Mathf.Abs(Input.mouseScrollDelta.y) > 0)
         {
-            transform.position += transform.forward * Input.mouseScrollDelta.y;
+            camera.fieldOfView += Input.mouseScrollDelta.y;
+            camera.fieldOfView = Mathf.Clamp(camera.fieldOfView, 20, 100);
         }
     }
 
@@ -160,17 +173,17 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         //Movement
-        Vector3 forward = transform.forward;
-        forward.y = 0;
-        forward.Normalize();
+        //Vector3 forward = transform.forward;
+        //forward.y = 0;
+        //forward.Normalize();
 
         if (Input.GetKey(KeyCode.W))
         {
-            rigidBody.AddForce(forward * movementSensitivity);
+            rigidBody.AddForce(transform.forward * movementSensitivity);
         }
         if (Input.GetKey(KeyCode.S))
         {
-            rigidBody.AddForce(-forward * movementSensitivity);
+            rigidBody.AddForce(-transform.forward * movementSensitivity);
         }
         if (Input.GetKey(KeyCode.A))
         {
@@ -179,6 +192,14 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             rigidBody.AddForce(transform.right * movementSensitivity);
+        }
+        if (Input.GetKey(KeyCode.E))
+        {
+            rigidBody.AddForce(transform.up * movementSensitivity);
+        }
+        if (Input.GetKey(KeyCode.Q))
+        {
+            rigidBody.AddForce(-transform.up * movementSensitivity);
         }
     }
 }
