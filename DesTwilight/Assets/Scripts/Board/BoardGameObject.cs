@@ -22,6 +22,9 @@ public class BoardGameObject : MonoBehaviour
 
     public float carryingHeightOffset = 0;
 
+    [SerializeField]
+    bool detatchWhenHeld = false;
+
     public void Start()
     {
         Collider = GetComponent<Collider>();
@@ -88,6 +91,21 @@ public class BoardGameObject : MonoBehaviour
         Collider.enabled = false;
         rigidbody.useGravity = false;
         rigidbody.isKinematic = true;
+        if (detatchWhenHeld)
+        {
+            var display = transform.parent.GetComponent<TileDisplay>();
+            if (display)
+            {
+                for(int i = 0; i < display.children.Length; i++)
+                {
+                    if(display.children[i] == transform)
+                    {
+                        display.children[i] = display.transform;
+                    }
+                }
+            }
+            detatchWhenHeld = false;
+        }
     }
 
     public virtual void Release()

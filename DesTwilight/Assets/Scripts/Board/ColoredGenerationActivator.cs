@@ -14,7 +14,11 @@ public class ColoredGenerationActivator : Activator
 
     public override void Activate(BoardGameObject gameObject)
     {
-        int y = 0;
+        if (chain)
+        {
+            chain.Activate(gameObject);
+        }
+        int y = 2;
         for (int i = 0; i < prefabs.Length; i++)
         {
             for(int j = 0; j < counts[i]; j++)

@@ -20,11 +20,24 @@ public class ObjectGenerator : MonoBehaviour
     [SerializeField]
     Texture2D alternator;
 
+    [SerializeField]
+    string name;
+
     void Start()
     {
+        if (!spawnTransform) spawnTransform = transform;
+
         if (prefab.GetComponents<MaterialGenerator>().Length==0) throw new System.Exception("Prefabs must have Material Generator");
 
-        Texture2D[] textures = FileFunctions.GetAtPath<Texture2D>(texturesPath);
+        Texture2D[] textures;
+        if (name == "")
+        {
+            textures = FileFunctions.GetAtPath<Texture2D>(texturesPath);
+        }
+        else
+        {
+            textures = FileFunctions.GetAtPathByName<Texture2D>(texturesPath, name);
+        }
         int y = 0;
         bool alternation = true;
         for(int i = 0; i < textures.Length;)

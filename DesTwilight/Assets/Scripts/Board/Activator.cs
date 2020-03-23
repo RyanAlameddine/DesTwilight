@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(BoardGameObject))]
 public abstract class Activator : MonoBehaviour
 {
+    [SerializeField]
+    protected Activator chain;
+
     public abstract void Activate(BoardGameObject gameObject);
+
 }

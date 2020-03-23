@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PositionSnapper : MonoBehaviour
 {
-    BoardGameObject target;
+    [HideInInspector]
+    public BoardGameObject target;
     [SerializeField]
     BoardGameObject parent;
     private void OnTriggerEnter(Collider other)

@@ -200,17 +200,17 @@ PrefabInstance:
     - target: {fileID: 2225725519896448559, guid: f3e408f18fb53d349b00308ca69dba66,
         type: 3}
       propertyPath: m_Color.r
-      value: 0.10980393
+      value: 0.20784315
       objectReference: {fileID: 0}
     - target: {fileID: 2225725519896448559, guid: f3e408f18fb53d349b00308ca69dba66,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.13725491
+      value: 0.21568629
       objectReference: {fileID: 0}
     - target: {fileID: 2225725519896448559, guid: f3e408f18fb53d349b00308ca69dba66,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.67058825
+      value: 0.5137255
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3e408f18fb53d349b00308ca69dba66, type: 3}
@@ -229,8 +229,14 @@ GameObject:
   - component: {fileID: 58087964}
   - component: {fileID: 58087963}
   - component: {fileID: 58087962}
+  - component: {fileID: 58087970}
+  - component: {fileID: 58087969}
+  - component: {fileID: 58087971}
+  - component: {fileID: 58087972}
+  - component: {fileID: 58087973}
+  - component: {fileID: 58087974}
   m_Layer: 0
-  m_Name: Lizix
+  m_Name: Mindnet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -251,6 +257,7 @@ MonoBehaviour:
   IgnoreSnapping: 0
   Activator: {fileID: 0}
   carryingHeightOffset: 0
+  detatchWhenHeld: 1
 --- !u!114 &58087963
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -276,7 +283,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -347,13 +354,123 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 58087961}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.5351844, z: 20.89}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 5.8, y: 1, z: -19.2}
   m_LocalScale: {x: 1.05, y: 1.05, z: 1.05}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_Father: {fileID: 613235434}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &58087969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 58087961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd72c435a2df4d8488827ec06ccb9c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 567739663718724648, guid: 3e811897dbceeba4b93bf623037ddbcb, type: 3}
+  texturesPath: Data/Tokens/FlagsAndCommand/Flags
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 39
+--- !u!114 &58087970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 58087961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c1eb05d7ae8b4149a7987d8ad631dde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+--- !u!114 &58087971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 58087961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd72c435a2df4d8488827ec06ccb9c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 5073803089983161926, guid: cd9c1fee2fb897e40841e34f7d0e669f, type: 3}
+  texturesPath: Data/Tokens/FlagsAndCommand/
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 15
+--- !u!114 &58087972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 58087961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd72c435a2df4d8488827ec06ccb9c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 4519415092760932101, guid: 191a62ec2c4e7ed4eb3f5db20b44e772, type: 3}
+  texturesPath: Data/cards/Tech/Racial
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 0
+--- !u!114 &58087973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 58087961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90d1daa9eaeb9a54ebe5d3c37389caa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 4519415092760932101, guid: 6a19abacec0e86643aa35b5a4a9836c6, type: 3}
+  texturesPath:
+  - Data/cards/Promissory/Racial
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 2800000, guid: d95b8a7d49ef876499052e5e8697cfdb, type: 3}
+  name: .Name
+  duplicates: 0
+--- !u!114 &58087974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 58087961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90d1daa9eaeb9a54ebe5d3c37389caa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 4519415092760932101, guid: 6a19abacec0e86643aa35b5a4a9836c6, type: 3}
+  texturesPath:
+  - Data/cards/Planets/Home
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 0
 --- !u!1 &71302463
 GameObject:
   m_ObjectHideFlags: 0
@@ -528,6 +645,12 @@ GameObject:
   - component: {fileID: 308609995}
   - component: {fileID: 308609994}
   - component: {fileID: 308609993}
+  - component: {fileID: 308610001}
+  - component: {fileID: 308610000}
+  - component: {fileID: 308610002}
+  - component: {fileID: 308610003}
+  - component: {fileID: 308610004}
+  - component: {fileID: 308610005}
   m_Layer: 0
   m_Name: Hacan
   m_TagString: Untagged
@@ -550,6 +673,7 @@ MonoBehaviour:
   IgnoreSnapping: 0
   Activator: {fileID: 0}
   carryingHeightOffset: 0
+  detatchWhenHeld: 1
 --- !u!114 &308609994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -575,7 +699,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -646,13 +770,207 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 308609992}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.63912, z: 20.89}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -18.8, y: 1, z: -9.7}
   m_LocalScale: {x: 1.05, y: 1.05, z: 1.05}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_Father: {fileID: 613235434}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &308610000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 308609992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd72c435a2df4d8488827ec06ccb9c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 567739663718724648, guid: 3e811897dbceeba4b93bf623037ddbcb, type: 3}
+  texturesPath: Data/Tokens/FlagsAndCommand/Flags
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 39
+--- !u!114 &308610001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 308609992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c1eb05d7ae8b4149a7987d8ad631dde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+--- !u!114 &308610002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 308609992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd72c435a2df4d8488827ec06ccb9c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 5073803089983161926, guid: cd9c1fee2fb897e40841e34f7d0e669f, type: 3}
+  texturesPath: Data/Tokens/FlagsAndCommand/
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 15
+--- !u!114 &308610003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 308609992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd72c435a2df4d8488827ec06ccb9c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 4519415092760932101, guid: 191a62ec2c4e7ed4eb3f5db20b44e772, type: 3}
+  texturesPath: Data/cards/Tech/Racial
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 0
+--- !u!114 &308610004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 308609992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90d1daa9eaeb9a54ebe5d3c37389caa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 4519415092760932101, guid: 6a19abacec0e86643aa35b5a4a9836c6, type: 3}
+  texturesPath:
+  - Data/cards/Promissory/Racial
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 2800000, guid: d95b8a7d49ef876499052e5e8697cfdb, type: 3}
+  name: .Name
+  duplicates: 0
+--- !u!114 &308610005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 308609992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90d1daa9eaeb9a54ebe5d3c37389caa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 4519415092760932101, guid: 6a19abacec0e86643aa35b5a4a9836c6, type: 3}
+  texturesPath:
+  - Data/cards/Planets/Home
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 0
+--- !u!1001 &315368854
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8761402492234656122, guid: cedbb521912fb694ca384e9f64cf9381,
+        type: 3}
+      propertyPath: m_Name
+      value: BoardBuilder
+      objectReference: {fileID: 0}
+    - target: {fileID: 8761402492234656122, guid: cedbb521912fb694ca384e9f64cf9381,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519073166290422498, guid: cedbb521912fb694ca384e9f64cf9381,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519073166290422498, guid: cedbb521912fb694ca384e9f64cf9381,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519073166290422498, guid: cedbb521912fb694ca384e9f64cf9381,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519073166290422498, guid: cedbb521912fb694ca384e9f64cf9381,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519073166290422498, guid: cedbb521912fb694ca384e9f64cf9381,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519073166290422498, guid: cedbb521912fb694ca384e9f64cf9381,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519073166290422498, guid: cedbb521912fb694ca384e9f64cf9381,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519073166290422498, guid: cedbb521912fb694ca384e9f64cf9381,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519073166290422498, guid: cedbb521912fb694ca384e9f64cf9381,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519073166290422498, guid: cedbb521912fb694ca384e9f64cf9381,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519073166290422498, guid: cedbb521912fb694ca384e9f64cf9381,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2505090848922422792, guid: cedbb521912fb694ca384e9f64cf9381,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 2505090848922422792, guid: cedbb521912fb694ca384e9f64cf9381,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.36
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cedbb521912fb694ca384e9f64cf9381, type: 3}
 --- !u!1 &345640968
 GameObject:
   m_ObjectHideFlags: 0
@@ -695,6 +1013,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SpawnCube(White)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2225725520019756898, guid: f3e408f18fb53d349b00308ca69dba66,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2225725520019756897, guid: f3e408f18fb53d349b00308ca69dba66,
         type: 3}
@@ -764,17 +1087,17 @@ PrefabInstance:
     - target: {fileID: 2225725519896448559, guid: f3e408f18fb53d349b00308ca69dba66,
         type: 3}
       propertyPath: m_Color.r
-      value: 0.9150943
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2225725519896448559, guid: f3e408f18fb53d349b00308ca69dba66,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.9023955
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2225725519896448559, guid: f3e408f18fb53d349b00308ca69dba66,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.88919544
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3e408f18fb53d349b00308ca69dba66, type: 3}
@@ -793,8 +1116,14 @@ GameObject:
   - component: {fileID: 352836558}
   - component: {fileID: 352836557}
   - component: {fileID: 352836556}
+  - component: {fileID: 352836564}
+  - component: {fileID: 352836563}
+  - component: {fileID: 352836565}
+  - component: {fileID: 352836566}
+  - component: {fileID: 352836567}
+  - component: {fileID: 352836568}
   m_Layer: 0
-  m_Name: Yssaril
+  m_Name: Tribe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -815,6 +1144,7 @@ MonoBehaviour:
   IgnoreSnapping: 0
   Activator: {fileID: 0}
   carryingHeightOffset: 0
+  detatchWhenHeld: 1
 --- !u!114 &352836557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -840,7 +1170,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -911,13 +1241,123 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 352836555}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 5.877162, z: 20.89}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 7.2, y: 1, z: 18.8}
   m_LocalScale: {x: 1.05, y: 1.05, z: 1.05}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 32
+  m_Father: {fileID: 613235434}
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &352836563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352836555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd72c435a2df4d8488827ec06ccb9c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 567739663718724648, guid: 3e811897dbceeba4b93bf623037ddbcb, type: 3}
+  texturesPath: Data/Tokens/FlagsAndCommand/Flags
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 39
+--- !u!114 &352836564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352836555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c1eb05d7ae8b4149a7987d8ad631dde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+--- !u!114 &352836565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352836555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd72c435a2df4d8488827ec06ccb9c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 5073803089983161926, guid: cd9c1fee2fb897e40841e34f7d0e669f, type: 3}
+  texturesPath: Data/Tokens/FlagsAndCommand/
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 15
+--- !u!114 &352836566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352836555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd72c435a2df4d8488827ec06ccb9c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 4519415092760932101, guid: 191a62ec2c4e7ed4eb3f5db20b44e772, type: 3}
+  texturesPath: Data/cards/Tech/Racial
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 0
+--- !u!114 &352836567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352836555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90d1daa9eaeb9a54ebe5d3c37389caa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 4519415092760932101, guid: 6a19abacec0e86643aa35b5a4a9836c6, type: 3}
+  texturesPath:
+  - Data/cards/Promissory/Racial
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 2800000, guid: d95b8a7d49ef876499052e5e8697cfdb, type: 3}
+  name: .Name
+  duplicates: 0
+--- !u!114 &352836568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352836555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90d1daa9eaeb9a54ebe5d3c37389caa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 4519415092760932101, guid: 6a19abacec0e86643aa35b5a4a9836c6, type: 3}
+  texturesPath:
+  - Data/cards/Planets/Home
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 0
 --- !u!1 &398077324
 GameObject:
   m_ObjectHideFlags: 0
@@ -1012,8 +1452,14 @@ GameObject:
   - component: {fileID: 437285725}
   - component: {fileID: 437285724}
   - component: {fileID: 437285723}
+  - component: {fileID: 437285731}
+  - component: {fileID: 437285730}
+  - component: {fileID: 437285732}
+  - component: {fileID: 437285733}
+  - component: {fileID: 437285734}
+  - component: {fileID: 437285735}
   m_Layer: 0
-  m_Name: Muaat
+  m_Name: Embers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1034,6 +1480,7 @@ MonoBehaviour:
   IgnoreSnapping: 0
   Activator: {fileID: 0}
   carryingHeightOffset: 0
+  detatchWhenHeld: 1
 --- !u!114 &437285724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1059,7 +1506,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -1130,13 +1577,123 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 437285722}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.356038, z: 20.89}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -19.5, y: 1, z: 5.5}
   m_LocalScale: {x: 1.05, y: 1.05, z: 1.05}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_Father: {fileID: 613235434}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &437285730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 437285722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd72c435a2df4d8488827ec06ccb9c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 567739663718724648, guid: 3e811897dbceeba4b93bf623037ddbcb, type: 3}
+  texturesPath: Data/Tokens/FlagsAndCommand/Flags
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 39
+--- !u!114 &437285731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 437285722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c1eb05d7ae8b4149a7987d8ad631dde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+--- !u!114 &437285732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 437285722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd72c435a2df4d8488827ec06ccb9c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 5073803089983161926, guid: cd9c1fee2fb897e40841e34f7d0e669f, type: 3}
+  texturesPath: Data/Tokens/FlagsAndCommand/
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 15
+--- !u!114 &437285733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 437285722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd72c435a2df4d8488827ec06ccb9c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 4519415092760932101, guid: 191a62ec2c4e7ed4eb3f5db20b44e772, type: 3}
+  texturesPath: Data/cards/Tech/Racial
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 0
+--- !u!114 &437285734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 437285722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90d1daa9eaeb9a54ebe5d3c37389caa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 4519415092760932101, guid: 6a19abacec0e86643aa35b5a4a9836c6, type: 3}
+  texturesPath:
+  - Data/cards/Promissory/Racial
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 2800000, guid: d95b8a7d49ef876499052e5e8697cfdb, type: 3}
+  name: .Name
+  duplicates: 0
+--- !u!114 &437285735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 437285722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90d1daa9eaeb9a54ebe5d3c37389caa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 4519415092760932101, guid: 6a19abacec0e86643aa35b5a4a9836c6, type: 3}
+  texturesPath:
+  - Data/cards/Planets/Home
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 0
 --- !u!1 &478080482
 GameObject:
   m_ObjectHideFlags: 0
@@ -1152,8 +1709,14 @@ GameObject:
   - component: {fileID: 478080485}
   - component: {fileID: 478080484}
   - component: {fileID: 478080483}
+  - component: {fileID: 478080491}
+  - component: {fileID: 478080490}
+  - component: {fileID: 478080492}
+  - component: {fileID: 478080493}
+  - component: {fileID: 478080494}
+  - component: {fileID: 478080495}
   m_Layer: 0
-  m_Name: Arborec
+  m_Name: Plant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1174,6 +1737,7 @@ MonoBehaviour:
   IgnoreSnapping: 0
   Activator: {fileID: 0}
   carryingHeightOffset: 0
+  detatchWhenHeld: 1
 --- !u!114 &478080484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1199,7 +1763,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -1270,13 +1834,123 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 478080482}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.47854707, z: 20.89}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 20.89}
   m_LocalScale: {x: 1.05, y: 1.05, z: 1.05}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_Father: {fileID: 613235434}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &478080490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 478080482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd72c435a2df4d8488827ec06ccb9c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 567739663718724648, guid: 3e811897dbceeba4b93bf623037ddbcb, type: 3}
+  texturesPath: Data/Tokens/FlagsAndCommand/Flags
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 39
+--- !u!114 &478080491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 478080482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c1eb05d7ae8b4149a7987d8ad631dde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+--- !u!114 &478080492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 478080482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd72c435a2df4d8488827ec06ccb9c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 5073803089983161926, guid: cd9c1fee2fb897e40841e34f7d0e669f, type: 3}
+  texturesPath: Data/Tokens/FlagsAndCommand/
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 15
+--- !u!114 &478080493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 478080482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd72c435a2df4d8488827ec06ccb9c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 4519415092760932101, guid: 191a62ec2c4e7ed4eb3f5db20b44e772, type: 3}
+  texturesPath: Data/cards/Tech/Racial
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 0
+--- !u!114 &478080494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 478080482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90d1daa9eaeb9a54ebe5d3c37389caa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 4519415092760932101, guid: 6a19abacec0e86643aa35b5a4a9836c6, type: 3}
+  texturesPath:
+  - Data/cards/Promissory/Racial
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 2800000, guid: d95b8a7d49ef876499052e5e8697cfdb, type: 3}
+  name: .Name
+  duplicates: 0
+--- !u!114 &478080495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 478080482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90d1daa9eaeb9a54ebe5d3c37389caa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 4519415092760932101, guid: 6a19abacec0e86643aa35b5a4a9836c6, type: 3}
+  texturesPath:
+  - Data/cards/Planets/Home
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 0
 --- !u!1 &538436738
 GameObject:
   m_ObjectHideFlags: 0
@@ -1471,6 +2145,86 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 555267620}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &613235433
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 613235434}
+  - component: {fileID: 613235435}
+  - component: {fileID: 613235436}
+  m_Layer: 0
+  m_Name: HomeTiles
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &613235434
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 613235433}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 478080489}
+  - {fileID: 791669487}
+  - {fileID: 1565802613}
+  - {fileID: 437285729}
+  - {fileID: 308609999}
+  - {fileID: 2139011432}
+  - {fileID: 629289232}
+  - {fileID: 58087968}
+  - {fileID: 1281171722}
+  - {fileID: 1992401213}
+  - {fileID: 2047485618}
+  - {fileID: 1020213475}
+  - {fileID: 1616412453}
+  - {fileID: 1497546947}
+  - {fileID: 686046367}
+  - {fileID: 1927000408}
+  - {fileID: 352836562}
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &613235435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 613235433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e3b9e8e0333a2f478959fd21a248bad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 5959117824501847599, guid: cf7e0e0e5316e41439c45e5dd675a983, type: 3}
+  texturesPath: Data/RaceSheets
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: 
+--- !u!114 &613235436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 613235433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a5db7ef8b3983e41814752d65ef408c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  children: []
+  startPositions: []
 --- !u!1 &621237682
 GameObject:
   m_ObjectHideFlags: 0
@@ -1565,8 +2319,16 @@ GameObject:
   - component: {fileID: 629289228}
   - component: {fileID: 629289227}
   - component: {fileID: 629289226}
+  - component: {fileID: 629289234}
+  - component: {fileID: 629289233}
+  - component: {fileID: 629289235}
+  - component: {fileID: 629289236}
+  - component: {fileID: 629289238}
+  - component: {fileID: 629289237}
+  - component: {fileID: 629289239}
+  - component: {fileID: 629289240}
   m_Layer: 0
-  m_Name: Creuss
+  m_Name: Ghost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1587,6 +2349,7 @@ MonoBehaviour:
   IgnoreSnapping: 0
   Activator: {fileID: 0}
   carryingHeightOffset: 0
+  detatchWhenHeld: 1
 --- !u!114 &629289227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1612,7 +2375,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -1683,13 +2446,161 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 629289225}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.2271092, z: 20.89}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6.4, y: 1, z: -18.9}
   m_LocalScale: {x: 1.05, y: 1.05, z: 1.05}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_Father: {fileID: 613235434}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &629289233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 629289225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd72c435a2df4d8488827ec06ccb9c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 567739663718724648, guid: 3e811897dbceeba4b93bf623037ddbcb, type: 3}
+  texturesPath: Data/Tokens/FlagsAndCommand/Flags
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 39
+--- !u!114 &629289234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 629289225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c1eb05d7ae8b4149a7987d8ad631dde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+--- !u!114 &629289235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 629289225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd72c435a2df4d8488827ec06ccb9c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 5073803089983161926, guid: cd9c1fee2fb897e40841e34f7d0e669f, type: 3}
+  texturesPath: Data/Tokens/FlagsAndCommand/
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 15
+--- !u!114 &629289236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 629289225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd72c435a2df4d8488827ec06ccb9c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 4519415092760932101, guid: 191a62ec2c4e7ed4eb3f5db20b44e772, type: 3}
+  texturesPath: Data/cards/Tech/Racial
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 0
+--- !u!114 &629289237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 629289225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd72c435a2df4d8488827ec06ccb9c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 8200283923793855348, guid: 730f52ed1a4ad7f44af5b28adfb95649, type: 3}
+  texturesPath: Data/Tokens/Wormholes
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 0
+--- !u!114 &629289238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 629289225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd72c435a2df4d8488827ec06ccb9c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 3876463562292768557, guid: b0df9307072bc554c896740d0b3a1ef0, type: 3}
+  texturesPath: Data/Planets
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 0
+--- !u!114 &629289239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 629289225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90d1daa9eaeb9a54ebe5d3c37389caa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 4519415092760932101, guid: 6a19abacec0e86643aa35b5a4a9836c6, type: 3}
+  texturesPath:
+  - Data/cards/Promissory/Racial
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 2800000, guid: d95b8a7d49ef876499052e5e8697cfdb, type: 3}
+  name: .Name
+  duplicates: 0
+--- !u!114 &629289240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 629289225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90d1daa9eaeb9a54ebe5d3c37389caa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 4519415092760932101, guid: 6a19abacec0e86643aa35b5a4a9836c6, type: 3}
+  texturesPath:
+  - Data/cards/Planets/Home
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 0
 --- !u!1 &686046360
 GameObject:
   m_ObjectHideFlags: 0
@@ -1705,8 +2616,14 @@ GameObject:
   - component: {fileID: 686046363}
   - component: {fileID: 686046362}
   - component: {fileID: 686046361}
+  - component: {fileID: 686046369}
+  - component: {fileID: 686046368}
+  - component: {fileID: 686046370}
+  - component: {fileID: 686046371}
+  - component: {fileID: 686046372}
+  - component: {fileID: 686046373}
   m_Layer: 0
-  m_Name: Xxcha
+  m_Name: Turtle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1727,6 +2644,7 @@ MonoBehaviour:
   IgnoreSnapping: 0
   Activator: {fileID: 0}
   carryingHeightOffset: 0
+  detatchWhenHeld: 1
 --- !u!114 &686046362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1752,7 +2670,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -1823,13 +2741,123 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 686046360}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 5.252333, z: 20.89}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 16.8, y: 1, z: -10.2}
   m_LocalScale: {x: 1.05, y: 1.05, z: 1.05}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 30
+  m_Father: {fileID: 613235434}
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &686046368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686046360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd72c435a2df4d8488827ec06ccb9c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 567739663718724648, guid: 3e811897dbceeba4b93bf623037ddbcb, type: 3}
+  texturesPath: Data/Tokens/FlagsAndCommand/Flags
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 39
+--- !u!114 &686046369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686046360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c1eb05d7ae8b4149a7987d8ad631dde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+--- !u!114 &686046370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686046360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd72c435a2df4d8488827ec06ccb9c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 5073803089983161926, guid: cd9c1fee2fb897e40841e34f7d0e669f, type: 3}
+  texturesPath: Data/Tokens/FlagsAndCommand/
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 15
+--- !u!114 &686046371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686046360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd72c435a2df4d8488827ec06ccb9c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 4519415092760932101, guid: 191a62ec2c4e7ed4eb3f5db20b44e772, type: 3}
+  texturesPath: Data/cards/Tech/Racial
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 0
+--- !u!114 &686046372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686046360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90d1daa9eaeb9a54ebe5d3c37389caa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 4519415092760932101, guid: 6a19abacec0e86643aa35b5a4a9836c6, type: 3}
+  texturesPath:
+  - Data/cards/Promissory/Racial
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 2800000, guid: d95b8a7d49ef876499052e5e8697cfdb, type: 3}
+  name: .Name
+  duplicates: 0
+--- !u!114 &686046373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686046360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90d1daa9eaeb9a54ebe5d3c37389caa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 4519415092760932101, guid: 6a19abacec0e86643aa35b5a4a9836c6, type: 3}
+  texturesPath:
+  - Data/cards/Planets/Home
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1936,8 +2964,14 @@ GameObject:
   - component: {fileID: 791669483}
   - component: {fileID: 791669482}
   - component: {fileID: 791669481}
+  - component: {fileID: 791669489}
+  - component: {fileID: 791669488}
+  - component: {fileID: 791669490}
+  - component: {fileID: 791669491}
+  - component: {fileID: 791669492}
+  - component: {fileID: 791669493}
   m_Layer: 0
-  m_Name: Barony
+  m_Name: Baron
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1958,6 +2992,7 @@ MonoBehaviour:
   IgnoreSnapping: 0
   Activator: {fileID: 0}
   carryingHeightOffset: 0
+  detatchWhenHeld: 1
 --- !u!114 &791669482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1983,7 +3018,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -2054,13 +3089,123 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 791669480}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.75435597, z: 20.89}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -12, y: 1, z: 16.1}
   m_LocalScale: {x: 1.05, y: 1.05, z: 1.05}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_Father: {fileID: 613235434}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &791669488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 791669480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd72c435a2df4d8488827ec06ccb9c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 567739663718724648, guid: 3e811897dbceeba4b93bf623037ddbcb, type: 3}
+  texturesPath: Data/Tokens/FlagsAndCommand/Flags
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 39
+--- !u!114 &791669489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 791669480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c1eb05d7ae8b4149a7987d8ad631dde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+--- !u!114 &791669490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 791669480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd72c435a2df4d8488827ec06ccb9c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 5073803089983161926, guid: cd9c1fee2fb897e40841e34f7d0e669f, type: 3}
+  texturesPath: Data/Tokens/FlagsAndCommand/
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 15
+--- !u!114 &791669491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 791669480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd72c435a2df4d8488827ec06ccb9c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 4519415092760932101, guid: 191a62ec2c4e7ed4eb3f5db20b44e772, type: 3}
+  texturesPath: Data/cards/Tech/Racial
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 0
+--- !u!114 &791669492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 791669480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90d1daa9eaeb9a54ebe5d3c37389caa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 4519415092760932101, guid: 6a19abacec0e86643aa35b5a4a9836c6, type: 3}
+  texturesPath:
+  - Data/cards/Promissory/Racial
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 2800000, guid: d95b8a7d49ef876499052e5e8697cfdb, type: 3}
+  name: .Name
+  duplicates: 0
+--- !u!114 &791669493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 791669480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90d1daa9eaeb9a54ebe5d3c37389caa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 4519415092760932101, guid: 6a19abacec0e86643aa35b5a4a9836c6, type: 3}
+  texturesPath:
+  - Data/cards/Planets/Home
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 0
 --- !u!1 &799181987
 GameObject:
   m_ObjectHideFlags: 0
@@ -2263,8 +3408,14 @@ GameObject:
   - component: {fileID: 1020213471}
   - component: {fileID: 1020213470}
   - component: {fileID: 1020213469}
+  - component: {fileID: 1020213477}
+  - component: {fileID: 1020213476}
+  - component: {fileID: 1020213478}
+  - component: {fileID: 1020213479}
+  - component: {fileID: 1020213480}
+  - component: {fileID: 1020213481}
   m_Layer: 0
-  m_Name: Sardakk
+  m_Name: Norr
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2285,6 +3436,7 @@ MonoBehaviour:
   IgnoreSnapping: 0
   Activator: {fileID: 0}
   carryingHeightOffset: 0
+  detatchWhenHeld: 1
 --- !u!114 &1020213470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2310,7 +3462,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -2381,13 +3533,123 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1020213468}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 4.328878, z: 20.89}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6.3, y: 1, z: 19.2}
   m_LocalScale: {x: 1.05, y: 1.05, z: 1.05}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 27
+  m_Father: {fileID: 613235434}
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1020213476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1020213468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd72c435a2df4d8488827ec06ccb9c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 567739663718724648, guid: 3e811897dbceeba4b93bf623037ddbcb, type: 3}
+  texturesPath: Data/Tokens/FlagsAndCommand/Flags
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 39
+--- !u!114 &1020213477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1020213468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c1eb05d7ae8b4149a7987d8ad631dde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+--- !u!114 &1020213478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1020213468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd72c435a2df4d8488827ec06ccb9c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 5073803089983161926, guid: cd9c1fee2fb897e40841e34f7d0e669f, type: 3}
+  texturesPath: Data/Tokens/FlagsAndCommand/
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 15
+--- !u!114 &1020213479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1020213468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd72c435a2df4d8488827ec06ccb9c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 4519415092760932101, guid: 191a62ec2c4e7ed4eb3f5db20b44e772, type: 3}
+  texturesPath: Data/cards/Tech/Racial
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 0
+--- !u!114 &1020213480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1020213468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90d1daa9eaeb9a54ebe5d3c37389caa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 4519415092760932101, guid: 6a19abacec0e86643aa35b5a4a9836c6, type: 3}
+  texturesPath:
+  - Data/cards/Promissory/Racial
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 2800000, guid: d95b8a7d49ef876499052e5e8697cfdb, type: 3}
+  name: .Name
+  duplicates: 0
+--- !u!114 &1020213481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1020213468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90d1daa9eaeb9a54ebe5d3c37389caa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 4519415092760932101, guid: 6a19abacec0e86643aa35b5a4a9836c6, type: 3}
+  texturesPath:
+  - Data/cards/Planets/Home
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 0
 --- !u!4 &1032429005 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6835743727866473340, guid: d8b3a1a3c96ff0c43b08835b2913f88d,
@@ -2474,17 +3736,17 @@ PrefabInstance:
     - target: {fileID: 2225725519896448559, guid: f3e408f18fb53d349b00308ca69dba66,
         type: 3}
       propertyPath: m_Color.r
-      value: 0.35949934
+      value: 0.2784314
       objectReference: {fileID: 0}
     - target: {fileID: 2225725519896448559, guid: f3e408f18fb53d349b00308ca69dba66,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.1477394
+      value: 0.1764706
       objectReference: {fileID: 0}
     - target: {fileID: 2225725519896448559, guid: f3e408f18fb53d349b00308ca69dba66,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.7830189
+      value: 0.45882356
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3e408f18fb53d349b00308ca69dba66, type: 3}
@@ -2568,17 +3830,17 @@ PrefabInstance:
     - target: {fileID: 2225725519896448559, guid: f3e408f18fb53d349b00308ca69dba66,
         type: 3}
       propertyPath: m_Color.r
-      value: 0.20000002
+      value: 0.30980393
       objectReference: {fileID: 0}
     - target: {fileID: 2225725519896448559, guid: f3e408f18fb53d349b00308ca69dba66,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.54901963
+      value: 0.5803922
       objectReference: {fileID: 0}
     - target: {fileID: 2225725519896448559, guid: f3e408f18fb53d349b00308ca69dba66,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.23529413
+      value: 0.33333334
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3e408f18fb53d349b00308ca69dba66, type: 3}
@@ -2597,6 +3859,12 @@ GameObject:
   - component: {fileID: 1281171718}
   - component: {fileID: 1281171717}
   - component: {fileID: 1281171716}
+  - component: {fileID: 1281171724}
+  - component: {fileID: 1281171723}
+  - component: {fileID: 1281171725}
+  - component: {fileID: 1281171726}
+  - component: {fileID: 1281171727}
+  - component: {fileID: 1281171728}
   m_Layer: 0
   m_Name: Mentak
   m_TagString: Untagged
@@ -2619,6 +3887,7 @@ MonoBehaviour:
   IgnoreSnapping: 0
   Activator: {fileID: 0}
   carryingHeightOffset: 0
+  detatchWhenHeld: 1
 --- !u!114 &1281171717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2644,7 +3913,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -2715,13 +3984,123 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1281171715}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.4145317, z: 20.89}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 12.6, y: 1, z: -15.6}
   m_LocalScale: {x: 1.05, y: 1.05, z: 1.05}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_Father: {fileID: 613235434}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1281171723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1281171715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd72c435a2df4d8488827ec06ccb9c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 567739663718724648, guid: 3e811897dbceeba4b93bf623037ddbcb, type: 3}
+  texturesPath: Data/Tokens/FlagsAndCommand/Flags
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 39
+--- !u!114 &1281171724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1281171715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c1eb05d7ae8b4149a7987d8ad631dde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+--- !u!114 &1281171725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1281171715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd72c435a2df4d8488827ec06ccb9c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 5073803089983161926, guid: cd9c1fee2fb897e40841e34f7d0e669f, type: 3}
+  texturesPath: Data/Tokens/FlagsAndCommand/
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 15
+--- !u!114 &1281171726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1281171715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd72c435a2df4d8488827ec06ccb9c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 4519415092760932101, guid: 191a62ec2c4e7ed4eb3f5db20b44e772, type: 3}
+  texturesPath: Data/cards/Tech/Racial
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 0
+--- !u!114 &1281171727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1281171715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90d1daa9eaeb9a54ebe5d3c37389caa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 4519415092760932101, guid: 6a19abacec0e86643aa35b5a4a9836c6, type: 3}
+  texturesPath:
+  - Data/cards/Promissory/Racial
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 2800000, guid: d95b8a7d49ef876499052e5e8697cfdb, type: 3}
+  name: .Name
+  duplicates: 0
+--- !u!114 &1281171728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1281171715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90d1daa9eaeb9a54ebe5d3c37389caa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 4519415092760932101, guid: 6a19abacec0e86643aa35b5a4a9836c6, type: 3}
+  texturesPath:
+  - Data/cards/Planets/Home
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 0
 --- !u!1 &1372058141
 GameObject:
   m_ObjectHideFlags: 0
@@ -2830,6 +4209,7 @@ GameObject:
   - component: {fileID: 1404730790}
   - component: {fileID: 1404730789}
   - component: {fileID: 1404730788}
+  - component: {fileID: 1404730791}
   m_Layer: 0
   m_Name: Speakest Token
   m_TagString: Untagged
@@ -2905,7 +4285,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1404730783}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: -10}
+  m_LocalPosition: {x: 0, y: 2, z: 9.7}
   m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2923,6 +4303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad8d459ab79405c4ca0319f09f40c052, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chain: {fileID: 1404730791}
   prefab: {fileID: 8761402492234656122, guid: cedbb521912fb694ca384e9f64cf9381, type: 3}
 --- !u!114 &1404730789
 MonoBehaviour:
@@ -2939,6 +4320,7 @@ MonoBehaviour:
   IgnoreSnapping: 1
   Activator: {fileID: 1404730788}
   carryingHeightOffset: 0
+  detatchWhenHeld: 0
 --- !u!54 &1404730790
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2955,6 +4337,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1404730791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1404730783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9908f36b0dae0da47b097b862d2afe8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  display: {fileID: 613235436}
 --- !u!1001 &1468129086
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2965,7 +4361,7 @@ PrefabInstance:
     - target: {fileID: 2225725520019756898, guid: f3e408f18fb53d349b00308ca69dba66,
         type: 3}
       propertyPath: m_Name
-      value: SpawnCube(Brown)
+      value: SpawnCube(Yellow)
       objectReference: {fileID: 0}
     - target: {fileID: 2225725520019756897, guid: f3e408f18fb53d349b00308ca69dba66,
         type: 3}
@@ -3035,17 +4431,17 @@ PrefabInstance:
     - target: {fileID: 2225725519896448559, guid: f3e408f18fb53d349b00308ca69dba66,
         type: 3}
       propertyPath: m_Color.r
-      value: 0.7830189
+      value: 0.820025
       objectReference: {fileID: 0}
     - target: {fileID: 2225725519896448559, guid: f3e408f18fb53d349b00308ca69dba66,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.48481256
+      value: 0.8301887
       objectReference: {fileID: 0}
     - target: {fileID: 2225725519896448559, guid: f3e408f18fb53d349b00308ca69dba66,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.1772873
+      value: 0.16447134
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3e408f18fb53d349b00308ca69dba66, type: 3}
@@ -3064,6 +4460,12 @@ GameObject:
   - component: {fileID: 1497546943}
   - component: {fileID: 1497546942}
   - component: {fileID: 1497546941}
+  - component: {fileID: 1497546949}
+  - component: {fileID: 1497546948}
+  - component: {fileID: 1497546950}
+  - component: {fileID: 1497546951}
+  - component: {fileID: 1497546952}
+  - component: {fileID: 1497546953}
   m_Layer: 0
   m_Name: Winnu
   m_TagString: Untagged
@@ -3086,6 +4488,7 @@ MonoBehaviour:
   IgnoreSnapping: 0
   Activator: {fileID: 0}
   carryingHeightOffset: 0
+  detatchWhenHeld: 1
 --- !u!114 &1497546942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3111,7 +4514,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -3182,13 +4585,123 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1497546940}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 4.946594, z: 20.89}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 13.8, y: 1, z: 14.9}
   m_LocalScale: {x: 1.05, y: 1.05, z: 1.05}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 29
+  m_Father: {fileID: 613235434}
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1497546948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1497546940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd72c435a2df4d8488827ec06ccb9c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 567739663718724648, guid: 3e811897dbceeba4b93bf623037ddbcb, type: 3}
+  texturesPath: Data/Tokens/FlagsAndCommand/Flags
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 39
+--- !u!114 &1497546949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1497546940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c1eb05d7ae8b4149a7987d8ad631dde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+--- !u!114 &1497546950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1497546940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd72c435a2df4d8488827ec06ccb9c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 5073803089983161926, guid: cd9c1fee2fb897e40841e34f7d0e669f, type: 3}
+  texturesPath: Data/Tokens/FlagsAndCommand/
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 15
+--- !u!114 &1497546951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1497546940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd72c435a2df4d8488827ec06ccb9c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 4519415092760932101, guid: 191a62ec2c4e7ed4eb3f5db20b44e772, type: 3}
+  texturesPath: Data/cards/Tech/Racial
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 0
+--- !u!114 &1497546952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1497546940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90d1daa9eaeb9a54ebe5d3c37389caa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 4519415092760932101, guid: 6a19abacec0e86643aa35b5a4a9836c6, type: 3}
+  texturesPath:
+  - Data/cards/Promissory/Racial
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 2800000, guid: d95b8a7d49ef876499052e5e8697cfdb, type: 3}
+  name: .Name
+  duplicates: 0
+--- !u!114 &1497546953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1497546940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90d1daa9eaeb9a54ebe5d3c37389caa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 4519415092760932101, guid: 6a19abacec0e86643aa35b5a4a9836c6, type: 3}
+  texturesPath:
+  - Data/cards/Planets/Home
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 0
 --- !u!1001 &1558304975
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3200,6 +4713,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SpawnCube(Pink)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2225725520019756898, guid: f3e408f18fb53d349b00308ca69dba66,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2225725520019756897, guid: f3e408f18fb53d349b00308ca69dba66,
         type: 3}
@@ -3269,17 +4787,17 @@ PrefabInstance:
     - target: {fileID: 2225725519896448559, guid: f3e408f18fb53d349b00308ca69dba66,
         type: 3}
       propertyPath: m_Color.r
-      value: 0.6117647
-      objectReference: {fileID: 0}
-    - target: {fileID: 2225725519896448559, guid: f3e408f18fb53d349b00308ca69dba66,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0.20000002
+      value: 0.8018868
       objectReference: {fileID: 0}
     - target: {fileID: 2225725519896448559, guid: f3e408f18fb53d349b00308ca69dba66,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.6156863
+      value: 0.8018868
+      objectReference: {fileID: 0}
+    - target: {fileID: 2225725519896448559, guid: f3e408f18fb53d349b00308ca69dba66,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.13616945
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3e408f18fb53d349b00308ca69dba66, type: 3}
@@ -3298,6 +4816,12 @@ GameObject:
   - component: {fileID: 1565802609}
   - component: {fileID: 1565802608}
   - component: {fileID: 1565802607}
+  - component: {fileID: 1565802615}
+  - component: {fileID: 1565802614}
+  - component: {fileID: 1565802616}
+  - component: {fileID: 1565802617}
+  - component: {fileID: 1565802618}
+  - component: {fileID: 1565802619}
   m_Layer: 0
   m_Name: Saar
   m_TagString: Untagged
@@ -3320,6 +4844,7 @@ MonoBehaviour:
   IgnoreSnapping: 0
   Activator: {fileID: 0}
   carryingHeightOffset: 0
+  detatchWhenHeld: 1
 --- !u!114 &1565802608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3345,7 +4870,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -3416,13 +4941,123 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1565802606}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.0464013, z: 20.89}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 18.7, y: 1, z: 9.9}
   m_LocalScale: {x: 1.05, y: 1.05, z: 1.05}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_Father: {fileID: 613235434}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1565802614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1565802606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd72c435a2df4d8488827ec06ccb9c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 567739663718724648, guid: 3e811897dbceeba4b93bf623037ddbcb, type: 3}
+  texturesPath: Data/Tokens/FlagsAndCommand/Flags
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 39
+--- !u!114 &1565802615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1565802606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c1eb05d7ae8b4149a7987d8ad631dde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+--- !u!114 &1565802616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1565802606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd72c435a2df4d8488827ec06ccb9c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 5073803089983161926, guid: cd9c1fee2fb897e40841e34f7d0e669f, type: 3}
+  texturesPath: Data/Tokens/FlagsAndCommand/
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 15
+--- !u!114 &1565802617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1565802606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd72c435a2df4d8488827ec06ccb9c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 4519415092760932101, guid: 191a62ec2c4e7ed4eb3f5db20b44e772, type: 3}
+  texturesPath: Data/cards/Tech/Racial
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 0
+--- !u!114 &1565802618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1565802606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90d1daa9eaeb9a54ebe5d3c37389caa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 4519415092760932101, guid: 6a19abacec0e86643aa35b5a4a9836c6, type: 3}
+  texturesPath:
+  - Data/cards/Promissory/Racial
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 2800000, guid: d95b8a7d49ef876499052e5e8697cfdb, type: 3}
+  name: .Name
+  duplicates: 0
+--- !u!114 &1565802619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1565802606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90d1daa9eaeb9a54ebe5d3c37389caa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 4519415092760932101, guid: 6a19abacec0e86643aa35b5a4a9836c6, type: 3}
+  texturesPath:
+  - Data/cards/Planets/Home
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 0
 --- !u!1 &1616412446
 GameObject:
   m_ObjectHideFlags: 0
@@ -3438,8 +5073,14 @@ GameObject:
   - component: {fileID: 1616412449}
   - component: {fileID: 1616412448}
   - component: {fileID: 1616412447}
+  - component: {fileID: 1616412455}
+  - component: {fileID: 1616412454}
+  - component: {fileID: 1616412456}
+  - component: {fileID: 1616412457}
+  - component: {fileID: 1616412458}
+  - component: {fileID: 1616412459}
   m_Layer: 0
-  m_Name: Universities
+  m_Name: Jol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3460,6 +5101,7 @@ MonoBehaviour:
   IgnoreSnapping: 0
   Activator: {fileID: 0}
   carryingHeightOffset: 0
+  detatchWhenHeld: 1
 --- !u!114 &1616412448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3485,7 +5127,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -3556,13 +5198,123 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1616412446}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 4.633271, z: 20.89}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -17.2, y: 1, z: 11.9}
   m_LocalScale: {x: 1.05, y: 1.05, z: 1.05}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 28
+  m_Father: {fileID: 613235434}
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1616412454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1616412446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd72c435a2df4d8488827ec06ccb9c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 567739663718724648, guid: 3e811897dbceeba4b93bf623037ddbcb, type: 3}
+  texturesPath: Data/Tokens/FlagsAndCommand/Flags
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 39
+--- !u!114 &1616412455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1616412446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c1eb05d7ae8b4149a7987d8ad631dde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+--- !u!114 &1616412456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1616412446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd72c435a2df4d8488827ec06ccb9c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 5073803089983161926, guid: cd9c1fee2fb897e40841e34f7d0e669f, type: 3}
+  texturesPath: Data/Tokens/FlagsAndCommand/
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 15
+--- !u!114 &1616412457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1616412446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd72c435a2df4d8488827ec06ccb9c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 4519415092760932101, guid: 191a62ec2c4e7ed4eb3f5db20b44e772, type: 3}
+  texturesPath: Data/cards/Tech/Racial
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 0
+--- !u!114 &1616412458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1616412446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90d1daa9eaeb9a54ebe5d3c37389caa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 4519415092760932101, guid: 6a19abacec0e86643aa35b5a4a9836c6, type: 3}
+  texturesPath:
+  - Data/cards/Promissory/Racial
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 2800000, guid: d95b8a7d49ef876499052e5e8697cfdb, type: 3}
+  name: .Name
+  duplicates: 0
+--- !u!114 &1616412459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1616412446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90d1daa9eaeb9a54ebe5d3c37389caa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 4519415092760932101, guid: 6a19abacec0e86643aa35b5a4a9836c6, type: 3}
+  texturesPath:
+  - Data/cards/Planets/Home
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 0
 --- !u!1 &1788073999
 GameObject:
   m_ObjectHideFlags: 0
@@ -3671,6 +5423,12 @@ GameObject:
   - component: {fileID: 1927000404}
   - component: {fileID: 1927000403}
   - component: {fileID: 1927000402}
+  - component: {fileID: 1927000410}
+  - component: {fileID: 1927000409}
+  - component: {fileID: 1927000411}
+  - component: {fileID: 1927000412}
+  - component: {fileID: 1927000413}
+  - component: {fileID: 1927000414}
   m_Layer: 0
   m_Name: Yin
   m_TagString: Untagged
@@ -3693,6 +5451,7 @@ MonoBehaviour:
   IgnoreSnapping: 0
   Activator: {fileID: 0}
   carryingHeightOffset: 0
+  detatchWhenHeld: 1
 --- !u!114 &1927000403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3718,7 +5477,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -3789,13 +5548,123 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1927000401}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 5.5681467, z: 20.89}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -19.9, y: 1, z: -2.4}
   m_LocalScale: {x: 1.05, y: 1.05, z: 1.05}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 31
+  m_Father: {fileID: 613235434}
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1927000409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927000401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd72c435a2df4d8488827ec06ccb9c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 567739663718724648, guid: 3e811897dbceeba4b93bf623037ddbcb, type: 3}
+  texturesPath: Data/Tokens/FlagsAndCommand/Flags
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 39
+--- !u!114 &1927000410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927000401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c1eb05d7ae8b4149a7987d8ad631dde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+--- !u!114 &1927000411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927000401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd72c435a2df4d8488827ec06ccb9c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 5073803089983161926, guid: cd9c1fee2fb897e40841e34f7d0e669f, type: 3}
+  texturesPath: Data/Tokens/FlagsAndCommand/
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 15
+--- !u!114 &1927000412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927000401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd72c435a2df4d8488827ec06ccb9c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 4519415092760932101, guid: 191a62ec2c4e7ed4eb3f5db20b44e772, type: 3}
+  texturesPath: Data/cards/Tech/Racial
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 0
+--- !u!114 &1927000413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927000401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90d1daa9eaeb9a54ebe5d3c37389caa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 4519415092760932101, guid: 6a19abacec0e86643aa35b5a4a9836c6, type: 3}
+  texturesPath:
+  - Data/cards/Promissory/Racial
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 2800000, guid: d95b8a7d49ef876499052e5e8697cfdb, type: 3}
+  name: .Name
+  duplicates: 0
+--- !u!114 &1927000414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927000401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90d1daa9eaeb9a54ebe5d3c37389caa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 4519415092760932101, guid: 6a19abacec0e86643aa35b5a4a9836c6, type: 3}
+  texturesPath:
+  - Data/cards/Planets/Home
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 0
 --- !u!1 &1933456862
 GameObject:
   m_ObjectHideFlags: 0
@@ -3955,17 +5824,17 @@ PrefabInstance:
     - target: {fileID: 2225725519896448559, guid: f3e408f18fb53d349b00308ca69dba66,
         type: 3}
       propertyPath: m_Color.r
-      value: 0.3962264
+      value: 0.09019608
       objectReference: {fileID: 0}
     - target: {fileID: 2225725519896448559, guid: f3e408f18fb53d349b00308ca69dba66,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.3962264
+      value: 0.09411766
       objectReference: {fileID: 0}
     - target: {fileID: 2225725519896448559, guid: f3e408f18fb53d349b00308ca69dba66,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.3962264
+      value: 0.10196079
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3e408f18fb53d349b00308ca69dba66, type: 3}
@@ -3984,6 +5853,13 @@ GameObject:
   - component: {fileID: 1992401209}
   - component: {fileID: 1992401208}
   - component: {fileID: 1992401207}
+  - component: {fileID: 1992401215}
+  - component: {fileID: 1992401214}
+  - component: {fileID: 1992401216}
+  - component: {fileID: 1992401217}
+  - component: {fileID: 1992401218}
+  - component: {fileID: 1992401219}
+  - component: {fileID: 1992401220}
   m_Layer: 0
   m_Name: Naalu
   m_TagString: Untagged
@@ -4006,6 +5882,7 @@ MonoBehaviour:
   IgnoreSnapping: 0
   Activator: {fileID: 0}
   carryingHeightOffset: 0
+  detatchWhenHeld: 1
 --- !u!114 &1992401208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4031,7 +5908,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -4102,13 +5979,142 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1992401206}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.7194693, z: 20.89}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 19.3, y: 1, z: -4.3}
   m_LocalScale: {x: 1.05, y: 1.05, z: 1.05}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_Father: {fileID: 613235434}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1992401214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992401206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd72c435a2df4d8488827ec06ccb9c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 567739663718724648, guid: 3e811897dbceeba4b93bf623037ddbcb, type: 3}
+  texturesPath: Data/Tokens/FlagsAndCommand/Flags
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 39
+--- !u!114 &1992401215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992401206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c1eb05d7ae8b4149a7987d8ad631dde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+--- !u!114 &1992401216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992401206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd72c435a2df4d8488827ec06ccb9c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 5073803089983161926, guid: cd9c1fee2fb897e40841e34f7d0e669f, type: 3}
+  texturesPath: Data/Tokens/FlagsAndCommand/
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 15
+--- !u!114 &1992401217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992401206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd72c435a2df4d8488827ec06ccb9c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 4519415092760932101, guid: 191a62ec2c4e7ed4eb3f5db20b44e772, type: 3}
+  texturesPath: Data/cards/Tech/Racial
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 0
+--- !u!114 &1992401218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992401206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd72c435a2df4d8488827ec06ccb9c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 8365274107792964942, guid: a2446af81cbf0a04f9aa9e0e10dd3d69, type: 3}
+  texturesPath: 
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: 
+  duplicates: 0
+--- !u!114 &1992401219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992401206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90d1daa9eaeb9a54ebe5d3c37389caa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 4519415092760932101, guid: 6a19abacec0e86643aa35b5a4a9836c6, type: 3}
+  texturesPath:
+  - Data/cards/Promissory/Racial
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 2800000, guid: d95b8a7d49ef876499052e5e8697cfdb, type: 3}
+  name: .Name
+  duplicates: 0
+--- !u!114 &1992401220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992401206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90d1daa9eaeb9a54ebe5d3c37389caa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 4519415092760932101, guid: 6a19abacec0e86643aa35b5a4a9836c6, type: 3}
+  texturesPath:
+  - Data/cards/Planets/Home
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 0
 --- !u!1 &2020277224
 GameObject:
   m_ObjectHideFlags: 0
@@ -4217,8 +6223,15 @@ GameObject:
   - component: {fileID: 2047485614}
   - component: {fileID: 2047485613}
   - component: {fileID: 2047485612}
+  - component: {fileID: 2047485620}
+  - component: {fileID: 2047485619}
+  - component: {fileID: 2047485621}
+  - component: {fileID: 2047485622}
+  - component: {fileID: 2047485623}
+  - component: {fileID: 2047485624}
+  - component: {fileID: 2047485625}
   m_Layer: 0
-  m_Name: Nekro
+  m_Name: Virus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4239,6 +6252,7 @@ MonoBehaviour:
   IgnoreSnapping: 0
   Activator: {fileID: 0}
   carryingHeightOffset: 0
+  detatchWhenHeld: 1
 --- !u!114 &2047485613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4264,7 +6278,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -4335,13 +6349,142 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2047485611}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 4.02022, z: 20.89}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 19.9, y: 1, z: 3.4}
   m_LocalScale: {x: 1.05, y: 1.05, z: 1.05}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 26
+  m_Father: {fileID: 613235434}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2047485619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047485611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd72c435a2df4d8488827ec06ccb9c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 567739663718724648, guid: 3e811897dbceeba4b93bf623037ddbcb, type: 3}
+  texturesPath: Data/Tokens/FlagsAndCommand/Flags
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 39
+--- !u!114 &2047485620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047485611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c1eb05d7ae8b4149a7987d8ad631dde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+--- !u!114 &2047485621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047485611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd72c435a2df4d8488827ec06ccb9c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 5073803089983161926, guid: cd9c1fee2fb897e40841e34f7d0e669f, type: 3}
+  texturesPath: Data/Tokens/FlagsAndCommand/
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 15
+--- !u!114 &2047485622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047485611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd72c435a2df4d8488827ec06ccb9c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 4519415092760932101, guid: 191a62ec2c4e7ed4eb3f5db20b44e772, type: 3}
+  texturesPath: Data/cards/Tech/Racial
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 0
+--- !u!114 &2047485623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047485611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd72c435a2df4d8488827ec06ccb9c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 5592139000764272009, guid: 3108cb9ab0df5b642a6e2aa867fa029a, type: 3}
+  texturesPath: Data/Tokens/Misc
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 0
+--- !u!114 &2047485624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047485611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90d1daa9eaeb9a54ebe5d3c37389caa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 4519415092760932101, guid: 6a19abacec0e86643aa35b5a4a9836c6, type: 3}
+  texturesPath:
+  - Data/cards/Promissory/Racial
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 2800000, guid: d95b8a7d49ef876499052e5e8697cfdb, type: 3}
+  name: .Name
+  duplicates: 0
+--- !u!114 &2047485625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047485611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90d1daa9eaeb9a54ebe5d3c37389caa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 4519415092760932101, guid: 6a19abacec0e86643aa35b5a4a9836c6, type: 3}
+  texturesPath:
+  - Data/cards/Planets/Home
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 0
 --- !u!1 &2049537926
 GameObject:
   m_ObjectHideFlags: 0
@@ -4448,6 +6591,12 @@ GameObject:
   - component: {fileID: 2139011428}
   - component: {fileID: 2139011427}
   - component: {fileID: 2139011426}
+  - component: {fileID: 2139011434}
+  - component: {fileID: 2139011433}
+  - component: {fileID: 2139011435}
+  - component: {fileID: 2139011436}
+  - component: {fileID: 2139011437}
+  - component: {fileID: 2139011438}
   m_Layer: 0
   m_Name: Sol
   m_TagString: Untagged
@@ -4470,6 +6619,7 @@ MonoBehaviour:
   IgnoreSnapping: 0
   Activator: {fileID: 0}
   carryingHeightOffset: 0
+  detatchWhenHeld: 1
 --- !u!114 &2139011427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4495,7 +6645,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -4566,13 +6716,123 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2139011425}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.9447784, z: 20.89}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -13.3, y: 1, z: -15.7}
   m_LocalScale: {x: 1.05, y: 1.05, z: 1.05}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_Father: {fileID: 613235434}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2139011433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2139011425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd72c435a2df4d8488827ec06ccb9c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 567739663718724648, guid: 3e811897dbceeba4b93bf623037ddbcb, type: 3}
+  texturesPath: Data/Tokens/FlagsAndCommand/Flags
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 39
+--- !u!114 &2139011434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2139011425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c1eb05d7ae8b4149a7987d8ad631dde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+--- !u!114 &2139011435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2139011425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd72c435a2df4d8488827ec06ccb9c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 5073803089983161926, guid: cd9c1fee2fb897e40841e34f7d0e669f, type: 3}
+  texturesPath: Data/Tokens/FlagsAndCommand/
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 15
+--- !u!114 &2139011436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2139011425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd72c435a2df4d8488827ec06ccb9c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 4519415092760932101, guid: 191a62ec2c4e7ed4eb3f5db20b44e772, type: 3}
+  texturesPath: Data/cards/Tech/Racial
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 0
+--- !u!114 &2139011437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2139011425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90d1daa9eaeb9a54ebe5d3c37389caa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 4519415092760932101, guid: 6a19abacec0e86643aa35b5a4a9836c6, type: 3}
+  texturesPath:
+  - Data/cards/Promissory/Racial
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 2800000, guid: d95b8a7d49ef876499052e5e8697cfdb, type: 3}
+  name: .Name
+  duplicates: 0
+--- !u!114 &2139011438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2139011425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90d1daa9eaeb9a54ebe5d3c37389caa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chain: {fileID: 0}
+  prefab: {fileID: 4519415092760932101, guid: 6a19abacec0e86643aa35b5a4a9836c6, type: 3}
+  texturesPath:
+  - Data/cards/Planets/Home
+  spawnTransform: {fileID: 0}
+  alternator: {fileID: 0}
+  name: .Name
+  duplicates: 0
 --- !u!1001 &1345762748148698780
 PrefabInstance:
   m_ObjectHideFlags: 0

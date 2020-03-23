@@ -63,7 +63,8 @@ public class Card : BoardGameObject
         carryingHeightOffset = newVal / 2f;
         newVal *= 100;
         middle.localScale = new Vector3(middle.localScale.x, newVal / (newVal + 1), middle.localScale.z);
-        text1.text = (otherCards.Count + 1) + "";
+
+        text1.text = otherCards.Count == 0 ? "" : (otherCards.Count + 1) + "";
         text2.text = text1.text;
     }
 
@@ -97,8 +98,10 @@ public class Card : BoardGameObject
             card.transform.position = transform.position;
             card.transform.rotation = transform.rotation;
             otherCards.Remove(card);
-            card.GetComponent<Card>().flipped = flipped;
-
+            var c = card.GetComponent<Card>();
+            c.flipped = flipped;
+            c.AdjustHeight();
+            
             AdjustHeight();
             return card;
         }

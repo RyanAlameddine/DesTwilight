@@ -9,7 +9,12 @@ public class GenerationActivator : Activator
 
     public override void Activate(BoardGameObject gameObject)
     {
+        if (chain)
+        {
+            chain.Activate(gameObject);
+        }
         Instantiate(prefab);
         gameObject.Activator = null;
+        
     }
 }
