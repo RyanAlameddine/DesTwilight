@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 /// <summary>
@@ -21,5 +22,10 @@ public class MaterialGenerator : MonoBehaviour
 
         meshRenderer.material = material;
         return material;
+    }
+
+    public void SetMaterial(Material mat)
+    {
+        meshRenderer.material = mat;
     }
 }

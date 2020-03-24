@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Card : BoardGameObject
 {
+    [SerializeField]
     List<GameObject> otherCards = new List<GameObject>();
 
     [SerializeField]

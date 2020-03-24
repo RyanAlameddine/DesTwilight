@@ -217,9 +217,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc211f110369e2049bef6aa4189ebf37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Locked: 0
+  rigidbody: {fileID: 0}
   IgnoreSnapping: 1
   Activator: {fileID: 2225725520019756829}
   carryingHeightOffset: 0
+  detatchWhenHeld: 0
+  identity: {fileID: 0}
 --- !u!114 &2225725520019756829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,6 +268,7 @@ MonoBehaviour:
   spawnTransform: {fileID: 0}
   alternator: {fileID: 2800000, guid: d95b8a7d49ef876499052e5e8697cfdb, type: 3}
   name: Red
+  duplicates: 0
 --- !u!1 &8113505375757936815
 GameObject:
   m_ObjectHideFlags: 0
@@ -274,6 +279,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8925427052213609406}
   - component: {fileID: 8638289388956508901}
+  - component: {fileID: 5628492873330277294}
   m_Layer: 0
   m_Name: TechDeck
   m_TagString: Untagged
@@ -309,7 +315,41 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chain: {fileID: 0}
   prefab: {fileID: 4519415092760932101, guid: 191a62ec2c4e7ed4eb3f5db20b44e772, type: 3}
-  texturesPath: Data/cards/Tech
+  texturesPath: Data/cards/Tech/Standard
   spawnTransform: {fileID: 0}
   alternator: {fileID: 0}
   name: 
+  duplicates: 0
+--- !u!114 &5628492873330277294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8113505375757936815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8258ea15b8f74c4889ce485d21cbbb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 0
+    i1: 0
+    i2: 0
+    i3: 0
+    i4: 0
+    i5: 0
+    i6: 0
+    i7: 0
+    i8: 0
+    i9: 0
+    i10: 0
+    i11: 0
+    i12: 0
+    i13: 0
+    i14: 0
+    i15: 0
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 1

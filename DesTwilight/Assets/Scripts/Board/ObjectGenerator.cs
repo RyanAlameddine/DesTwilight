@@ -53,39 +53,41 @@ public class ObjectGenerator : NetworkBehaviour
             GameObject instance = Instantiate(prefab, spawnTransform.position + new Vector3(0, y, 0), Quaternion.identity);
             y += 1;
 
-            //foreach(var generator in instance.GetComponents<MaterialGenerator>())
-            //{
-            //    Texture2D texture;
-            //    if (alternator && alternation)
-            //    {
-            //        texture = alternator;
-            //    }
-            //    else
-            //    {
-            //        texture = textures[i];
-            //        i++;
-            //    }
-            //    alternation = !alternation;
-            //    Material material = generator.CreateMaterial();
-            //    material.mainTexture = texture;
-            //}
+            foreach (var generator in instance.GetComponents<MaterialGenerator>())
+            {
+                Texture2D texture;
+                if (alternator && alternation)
+                {
+                    texture = alternator;
+                }
+                else
+                {
+                    texture = textures[i];
+                    i++;
+                }
+                alternation = !alternation;
+                Material material = generator.CreateMaterial();
+
+                AssetDatabase.CreateAsset(material, "Assets/GeneratedMats/" + texture.name + ".mat");
+                material.mainTexture = texture;
+            }
             NetworkServer.Spawn(instance);
             //i--;
-            RpcLoadMats(instance, textures[i].EncodeToPNG());
-            i++;
+            //RpcLoadMats(instance, textures[i].EncodeToPNG());
+            //i++;
 
         }
     }
 
-    [ClientRpc]
-    void RpcLoadMats(GameObject instance, byte[] receivedByte)
-    {
-        var receivedTexture = new Texture2D(1, 1);
-        receivedTexture.LoadImage(receivedByte);
-        foreach (var generator in instance.GetComponents<MaterialGenerator>())
-        {
-            Material material = generator.CreateMaterial();
-            material.mainTexture = receivedTexture;
-        }
-    }
+    //[ClientRpc]
+    //void RpcLoadMats(GameObject instance, byte[] receivedByte)
+    //{
+    //    var receivedTexture = new Texture2D(1, 1);
+    //    receivedTexture.LoadImage(receivedByte);
+    //    foreach (var generator in instance.GetComponents<MaterialGenerator>())
+    //    {
+    //        Material material = generator.CreateMaterial();
+    //        material.mainTexture = receivedTexture;
+    //    }
+    //}
 }

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using UnityEditor;
+using UnityEngine;
 using UnityEngine.Networking;
 
 /// <summary>
@@ -87,6 +88,7 @@ public class MultiPathObjectGeneratorActivator : Activator
                     }
                     alternation = !alternation;
                     Material material = generator.CreateMaterial();
+                    AssetDatabase.CreateAsset(material, "Assets/GeneratedMats/" + texture.name + ".mat");
                     material.mainTexture = texture;
                 }
                 NetworkServer.Spawn(instance);

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using UnityEditor;
+using UnityEngine;
 using UnityEngine.Networking;
 
 /// <summary>
@@ -63,6 +64,8 @@ public class ObjectGeneratorActivator : Activator
                 textures = FileFunctions.GetAtPathByName<Texture2D>(texturesPath, name);
             }
             bool alternation = true;
+            bool first = true;
+            Material alternMat = null;
             for (int i = 0; i < textures.Length;)
             {
                 if (textures[i] == alternator)
@@ -80,15 +83,30 @@ public class ObjectGeneratorActivator : Activator
                     if (alternator && alternation)
                     {
                         texture = alternator;
+
+                        if (first)
+                        {
+                            first = false;
+                            Material material = generator.CreateMaterial();
+                            AssetDatabase.CreateAsset(material, "Assets/GeneratedMats/" + texture.name + ".mat");
+                            material.mainTexture = texture;
+                            alternMat = material;
+                        }
+                        else
+                        {
+                            generator.SetMaterial(alternMat);
+                        }
                     }
                     else
                     {
                         texture = textures[i];
                         i++;
+                        Material material = generator.CreateMaterial();
+                        AssetDatabase.CreateAsset(material, "Assets/GeneratedMats/" + texture.name + ".mat");
+                        material.mainTexture = texture;
                     }
                     alternation = !alternation;
-                    Material material = generator.CreateMaterial();
-                    material.mainTexture = texture;
+
                 }
 
                 for (int j = 0; j < duplicates; j++)
