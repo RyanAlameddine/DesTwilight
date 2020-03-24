@@ -1,9 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
 [RequireComponent(typeof(Camera), typeof(Rigidbody))]
-public class PlayerController : MonoBehaviour
+public class PlayerController : NetworkBehaviour
 {
     Rigidbody rigidBody;
     [SerializeField]
@@ -17,19 +18,27 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     GameObject cursor;
 
-    [SerializeField]
     GameObject activateSuggestion;
 
-    [SerializeField]
     GameObject dealSuggestion;
 
     //bool rotating = false;
     [SerializeField]
     SmoothMouseLook look;
 
+    NetworkIdentity identity;
+
     void Start()
     {
         rigidBody = transform.GetComponent<Rigidbody>();
+        identity = GetComponent<NetworkIdentity>();
+
+        Transform parent = GameObject.Find("Canvas").transform;
+
+        activateSuggestion = parent.GetChild(1).gameObject;
+        dealSuggestion = parent.GetChild(2).gameObject;
+        activateSuggestion.SetActive(false);
+        dealSuggestion.SetActive(false);
         //Cursor.lockState = CursorLockMode.Confined;
         //transform.LookAt(transform.parent);
     }
@@ -120,55 +129,97 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            if (objInHand != null)
+            if (game)
             {
-                activateSuggestion.SetActive(false);
-                objInHand.Release();
+                CmdHold(game.identity);
+                objInHand = game;
+                //game.gameObject.layer = 2;
             }
-            objInHand = game;
-            if (objInHand)
-            {
-                if (objInHand.Locked)
-                {
-                    objInHand = null;
-                    return;
-                }
-                //pickup card from deck
-                if (game is Card card && (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)))
-                {
-                    objInHand = card.Deal().GetComponent<Card>();
-                    objInHand.enabled = true;
-                    objInHand.gameObject.SetActive(true);
-                    objInHand.Hold();
-                    objInHand.transform.position = hit.point + new Vector3(0, .4f + objInHand.carryingHeightOffset, 0);
-                    
-                }
-                //pickup non-card
-                else
-                {
-                    objInHand.Hold();
-                }
-                if(objInHand.Activator != null)
-                {
-                    activateSuggestion.SetActive(true);
-                }
-            }
-        }else if (Input.GetMouseButton(0))
+            //if (objInHand != null)
+            //{
+            //    activateSuggestion.SetActive(false);
+            //    //objInHand.Release();
+            //}
+            //objInHand = game;
+            //if (objInHand)
+            //{
+            //    if (objInHand.Locked)
+            //    {
+            //        objInHand = null;
+            //        return;
+            //    }
+            //    //pickup card from deck
+            //    if (game is Card card && (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)))
+            //    {
+            //        objInHand = card.Deal().GetComponent<Card>();
+            //        objInHand.enabled = true;
+            //        objInHand.gameObject.SetActive(true);
+            //        objInHand.Hold();
+            //        objInHand.transform.position = hit.point + new Vector3(0, .4f + objInHand.carryingHeightOffset, 0);
+
+            //    }
+            //    //pickup non-card
+            //    else
+            //    {
+            //        objInHand.Hold();
+            //    }
+            //    if(objInHand.Activator != null)
+            //    {
+            //        activateSuggestion.SetActive(true);
+            //    }
+            //}
+        }
+        else if (Input.GetMouseButton(0))
         {
             if (objInHand)
             {
-                objInHand.transform.position = hit.point + new Vector3(0, .4f + objInHand.carryingHeightOffset, 0);
+                //objInHand.transform.position = ;
+                Vector3 target = hit.point + new Vector3(0, .4f + objInHand.carryingHeightOffset, 0);
+                objInHand.transform.position = target;
+                //objInHand.rigidbody.AddForce((target - objInHand.transform.position)*100);
+                //CmdUpdateBlock(hit.point + new Vector3(0, .4f /*+ objInHand.carryingHeightOffset*/, 0));
+                
             }
         }else if (Input.GetMouseButtonUp(0))
         {
             if (objInHand)
             {
-                objInHand.Release();
+                //objInHand.layer = 0;
+                CmdRelease(objInHand.identity);
                 activateSuggestion.SetActive(false);
                 objInHand = null;
             }
         }
     }
+
+    [Command]
+    void CmdHold(NetworkIdentity objectToHold)
+    {
+        objectToHold.AssignClientAuthority(identity.clientAuthorityOwner);
+        objectToHold.GetComponent<BoardGameObject>().Hold();
+        RpcHold(objectToHold);
+    }
+
+    [Command]
+    void CmdRelease(NetworkIdentity objectToHold)
+    {
+        objectToHold.RemoveClientAuthority(identity.clientAuthorityOwner);
+        objectToHold.GetComponent<BoardGameObject>().Release();
+        RpcRelease(objectToHold);
+    }
+
+    [ClientRpc]
+    void RpcHold(NetworkIdentity objectToHold)
+    {
+        objectToHold.GetComponent<BoardGameObject>().Hold();
+    }
+
+    [ClientRpc]
+    void RpcRelease(NetworkIdentity objectToHold)
+    {
+        objectToHold.GetComponent<BoardGameObject>().Release();
+    }
+
 
     void FixedUpdate()
     {

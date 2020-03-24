@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
 public class ColoredGenerationActivator : Activator
 {
@@ -12,11 +13,12 @@ public class ColoredGenerationActivator : Activator
     [SerializeField]
     Material material;
 
-    public override void Activate(BoardGameObject gameObject)
+    [Command]
+    public override void CmdActivate(GameObject gameObject)
     {
         if (chain)
         {
-            chain.Activate(gameObject);
+            chain.CmdActivate(gameObject);
         }
         int y = 2;
         for (int i = 0; i < prefabs.Length; i++)
@@ -24,10 +26,12 @@ public class ColoredGenerationActivator : Activator
             for(int j = 0; j < counts[i]; j++)
             {
                 y++;
-                Instantiate(prefabs[i], transform.position + new Vector3(0, y, 0), transform.rotation).GetComponent<MeshRenderer>().material = material;
+                GameObject obj = Instantiate(prefabs[i], transform.position + new Vector3(0, y, 0), transform.rotation);
+                obj.GetComponent<MeshRenderer>().material = material;
+                NetworkServer.Spawn(obj);
             }
         }
-        gameObject.Activator = null;
+        gameObject.GetComponent<BoardGameObject>().Activator = null;
         Destroy(gameObject.gameObject);
     }
 }

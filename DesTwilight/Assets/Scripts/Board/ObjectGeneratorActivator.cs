@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Networking;
 
 /// <summary>
 /// Creates objects from prefab with a material created with all textures found in the texturesPath directory
@@ -30,7 +31,8 @@ public class ObjectGeneratorActivator : Activator
         y = 0;
     }
 
-    public override void Activate(BoardGameObject boardGameObject)
+    [Command]
+    public override void CmdActivate(GameObject boardGameObject)
     {
         if (!spawnTransform) spawnTransform = transform;
 
@@ -105,6 +107,6 @@ public class ObjectGeneratorActivator : Activator
             }
         }
         if (chain)
-            chain.Activate(boardGameObject);
+            chain.CmdActivate(boardGameObject);
     }
 }

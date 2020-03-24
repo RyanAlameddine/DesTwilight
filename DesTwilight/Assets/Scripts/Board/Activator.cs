@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public abstract class Activator : MonoBehaviour
+public abstract class Activator : NetworkBehaviour
 {
     [SerializeField]
     protected Activator chain;
 
-    public abstract void Activate(BoardGameObject gameObject);
+    [Command]
+    public abstract void CmdActivate(GameObject gameObject);
 
 }

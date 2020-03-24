@@ -1,23 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
 public class ClearChildrenActivator : Activator
 {
     [SerializeField]
     TileDisplay display;
 
-    public override void Activate(BoardGameObject gameObject)
+    [Command]
+    public override void CmdActivate(GameObject gameObject)
     {
         foreach(var child in display.children)
         {
-            if(child != display.transform)
+            if(child != null)
             {
                 Destroy(child.gameObject);
             }
         }
         display.children = new Transform[0];
         if(chain)
-            chain.Activate(gameObject);
+            chain.CmdActivate(gameObject);
     }
 }

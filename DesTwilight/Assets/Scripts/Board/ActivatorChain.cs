@@ -1,20 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
 public class ActivatorChain : Activator
 {
     List<Activator> activators = new List<Activator>();
 
-    public override void Activate(BoardGameObject gameObject)
+    [Command]
+    public override void CmdActivate(GameObject gameObject)
     {
         
         foreach(Activator activator in activators)
         {
             if (activator is ActivatorChain) continue;
-            activator.Activate(gameObject);
+            activator.CmdActivate(gameObject);
         }
-        gameObject.Activator = null;
+        gameObject.GetComponent<BoardGameObject>().Activator = null;
     }
 
     void Start()

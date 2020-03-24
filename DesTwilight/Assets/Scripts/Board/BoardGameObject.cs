@@ -1,16 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(Rigidbody), typeof(NetworkTransform))]
 public class BoardGameObject : MonoBehaviour
 {
     public Collider Collider { get; private set; }
+    
     public bool Locked;
 
-    protected new Rigidbody rigidbody;
+    public new Rigidbody rigidbody;
     public bool holding { get; protected set; } = false;
 
+    
     protected bool flipped = false;
 
     [SerializeField]
@@ -25,10 +28,14 @@ public class BoardGameObject : MonoBehaviour
     [SerializeField]
     bool detatchWhenHeld = false;
 
+    public NetworkIdentity identity;
+
     public void Start()
     {
         Collider = GetComponent<Collider>();
         rigidbody = GetComponent<Rigidbody>();
+        identity = GetComponent<NetworkIdentity>();
+        //rigidbody.drag = 5;
     }
 
     public void Update()
@@ -43,12 +50,12 @@ public class BoardGameObject : MonoBehaviour
             {
                 if (Activator)
                 {
-                    Activator.Activate(this);
-                    if (!Activator)
-                    {
-                        GameObject gameObject = GameObject.Find("ActivateSuggestion");
-                        gameObject.SetActive(false);
-                    }
+                    Activator.CmdActivate(gameObject);
+                    //if (!Activator)
+                    //{
+                    //    GameObject gameObject = GameObject.Find("ActivateSuggestion");
+                    //    gameObject.SetActive(false);
+                    //}
                 }
             }
         }
@@ -90,7 +97,8 @@ public class BoardGameObject : MonoBehaviour
         holding = true;
         Collider.enabled = false;
         rigidbody.useGravity = false;
-        rigidbody.isKinematic = true;
+        //rigidbody.drag = 10;
+        //rigidbody.isKinematic = true;
         if (detatchWhenHeld)
         {
             var display = transform.parent.GetComponent<TileDisplay>();
@@ -100,7 +108,7 @@ public class BoardGameObject : MonoBehaviour
                 {
                     if(display.children[i] == transform)
                     {
-                        display.children[i] = display.transform;
+                        display.children[i] = null;
                     }
                 }
             }
@@ -113,7 +121,8 @@ public class BoardGameObject : MonoBehaviour
         holding = false;
         Collider.enabled = true;
         rigidbody.useGravity = true;
-        rigidbody.isKinematic = false;
+        //rigidbody.drag = 0;
+        //rigidbody.isKinematic = false;
         if (!Input.GetKey(KeyCode.LeftControl))
         {
             float y = transform.localRotation.eulerAngles.y;

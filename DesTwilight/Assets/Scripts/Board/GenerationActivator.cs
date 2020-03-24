@@ -1,20 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
 public class GenerationActivator : Activator
 {
     [SerializeField]
     GameObject prefab;
 
-    public override void Activate(BoardGameObject gameObject)
+    [Command]
+    public override void CmdActivate(GameObject gameObject)
     {
         if (chain)
         {
-            chain.Activate(gameObject);
+            chain.CmdActivate(gameObject);
         }
-        Instantiate(prefab);
-        gameObject.Activator = null;
+        GameObject obj = Instantiate(prefab);
+        NetworkServer.Spawn(obj);
+        gameObject.GetComponent<BoardGameObject>().Activator = null;
         
     }
 }

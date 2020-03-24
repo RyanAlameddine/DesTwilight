@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Networking;
 
 /// <summary>
 /// Creates objects from prefab with a material created with all textures found in the texturesPath directory
@@ -30,7 +31,8 @@ public class MultiPathObjectGeneratorActivator : Activator
         y = 0;
     }
 
-    public override void Activate(BoardGameObject boardGameObject)
+    [Command]
+    public override void CmdActivate(GameObject boardGameObject)
     {
         if (!spawnTransform) spawnTransform = transform;
 
@@ -87,15 +89,16 @@ public class MultiPathObjectGeneratorActivator : Activator
                     Material material = generator.CreateMaterial();
                     material.mainTexture = texture;
                 }
+                NetworkServer.Spawn(instance);
 
                 for (int j = 0; j < duplicates; j++)
                 {
-                    Instantiate(instance);
+                    NetworkServer.Spawn(Instantiate(instance));
                     y += 1;
                 }
             }
         }
         if (chain)
-            chain.Activate(boardGameObject);
+            chain.CmdActivate(boardGameObject);
     }
 }

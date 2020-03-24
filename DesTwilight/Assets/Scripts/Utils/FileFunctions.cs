@@ -6,60 +6,83 @@ using UnityEngine;
 
 public static class FileFunctions
 {
-    public static T[] GetAtPath<T>(string path)
+    public static T[] GetAtPath<T>(string path) where T : UnityEngine.Object
     {
-        ArrayList al = new ArrayList();
-        string[] fileEntries = Directory.GetFiles(Application.dataPath + "/" + path);
+        T[] res = Resources.LoadAll<T>(path);
+        return res;
 
-        foreach (string fileName in fileEntries)
-        {
-            string temp = fileName.Replace("\\", "/");
-            int index = temp.LastIndexOf("/");
-            string localPath = "Assets/" + path;
+        //ArrayList al = new ArrayList();
+        //string[] fileEntries = Directory.GetFiles(Application.dataPath + "/Resources/" + path);
 
-            if (index > 0)
-                localPath += temp.Substring(index);
+        //foreach (string fileName in fileEntries)
+        //{
+        //    string temp = fileName.Replace("\\", "/");
+        //    int index = temp.LastIndexOf("/");
+        //    string localPath = path;
 
-            Object t = AssetDatabase.LoadAssetAtPath(localPath, typeof(T));
+        //    if (index > 0)
+        //        localPath += temp.Substring(index);
 
-            if (t != null)
-                al.Add(t);
-        }
+        //    localPath = Path.ChangeExtension(localPath, null);
 
-        T[] result = new T[al.Count];
+        //    Object t = Resources.Load(localPath, typeof(T));
 
-        for (int i = 0; i < al.Count; i++)
-            result[i] = (T)al[i];
+        //    if (t != null)
+        //        al.Add(t);
+        //}
 
-        return result;
+        //T[] result = new T[al.Count];
+
+        //for (int i = 0; i < al.Count; i++)
+        //    result[i] = (T)al[i];
+
+        //return result;
     }
 
-    public static T[] GetAtPathByName<T>(string path, string name)
+    public static T[] GetAtPathByName<T>(string path, string name) where T : UnityEngine.Object
     {
-        ArrayList al = new ArrayList();
-        string[] fileEntries = Directory.GetFiles(Application.dataPath + "/" + path);
-
-        foreach (string fileName in fileEntries)
+        T[] res = Resources.LoadAll<T>(path);
+        List<T> cutDown = new List<T>();
+        for(int i = 0; i < res.Length; i++)
         {
-            if (!fileName.Contains(name)) continue;
-            string temp = fileName.Replace("\\", "/");
-            int index = temp.LastIndexOf("/");
-            string localPath = "Assets/" + path;
-
-            if (index > 0)
-                localPath += temp.Substring(index);
-
-            Object t = AssetDatabase.LoadAssetAtPath(localPath, typeof(T));
-
-            if (t != null)
-                al.Add(t);
+            if (res[i].name.Contains(name))
+            {
+                cutDown.Add(res[i]);
+            }
+            else
+            {
+                Resources.UnloadAsset(res[i]);
+            }
         }
 
-        T[] result = new T[al.Count];
+        return cutDown.ToArray();
 
-        for (int i = 0; i < al.Count; i++)
-            result[i] = (T)al[i];
+        //ArrayList al = new ArrayList();
+        //string[] fileEntries = Directory.GetFiles(Application.dataPath + "/Resources/" + path);
 
-        return result;
+        //foreach (string fileName in fileEntries)
+        //{
+        //    if (!fileName.Contains(name)) continue;
+        //    string temp = fileName.Replace("\\", "/");
+        //    int index = temp.LastIndexOf("/");
+        //    string localPath = path;
+
+        //    if (index > 0)
+        //        localPath += temp.Substring(index);
+
+        //    localPath = Path.ChangeExtension(localPath, null);
+
+        //    Object t = Resources.Load(localPath, typeof(T));
+
+        //    if (t != null)
+        //        al.Add(t);
+        //}
+
+        //T[] result = new T[al.Count];
+
+        //for (int i = 0; i < al.Count; i++)
+        //    result[i] = (T)al[i];
+
+        //return result;
     }
 }

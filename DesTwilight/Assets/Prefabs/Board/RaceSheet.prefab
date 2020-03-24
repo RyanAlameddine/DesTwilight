@@ -1097,6 +1097,8 @@ GameObject:
   - component: {fileID: 8085618777150561418}
   - component: {fileID: 5959117824501847633}
   - component: {fileID: 7157771572621753572}
+  - component: {fileID: -8795254243330768569}
+  - component: {fileID: -8343177743694401117}
   m_Layer: 0
   m_Name: RaceSheet
   m_TagString: Untagged
@@ -1234,10 +1236,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02c6246572fa11c4c978d504b4d82179, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Locked: 0
+  rigidbody: {fileID: 0}
   IgnoreSnapping: 1
   Activator: {fileID: 0}
   carryingHeightOffset: 0
   detatchWhenHeld: 0
+  identity: {fileID: 0}
   snappers:
   - {fileID: 6612097816605776989}
   - {fileID: 1669059447272041853}
@@ -1249,6 +1254,61 @@ MonoBehaviour:
   - {fileID: 5596130512621947388}
   - {fileID: 4431310092653216838}
   - {fileID: 3018476391515729625}
+--- !u!114 &-8795254243330768569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5959117824501847599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8258ea15b8f74c4889ce485d21cbbb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 0
+    i1: 0
+    i2: 0
+    i3: 0
+    i4: 0
+    i5: 0
+    i6: 0
+    i7: 0
+    i8: 0
+    i9: 0
+    i10: 0
+    i11: 0
+    i12: 0
+    i13: 0
+    i14: 0
+    i15: 0
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 1
+--- !u!114 &-8343177743694401117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5959117824501847599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13d6c522af31447398568cc65334232b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TransformSyncMode: 1
+  m_SendInterval: 0.1
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_SyncSpin: 0
+  m_MovementTheshold: 0.001
+  m_VelocityThreshold: 0.0001
+  m_SnapThreshold: 5
+  m_InterpolateRotation: 1
+  m_InterpolateMovement: 1
 --- !u!1 &7929949695570402433
 GameObject:
   m_ObjectHideFlags: 0
